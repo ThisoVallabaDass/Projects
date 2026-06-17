@@ -1,0 +1,167 @@
+{
+  "common": {
+    "loading": "ஏற்றுகிறது...",
+    "error": "பிழை",
+    "success": "வெற்றி",
+    "cancel": "ரத்து செய்",
+    "save": "சேமி",
+    "delete": "நீக்கு",
+    "edit": "திருத்து",
+    "search": "தேடு",
+    "filter": "வடிகட்டு",
+    "sort": "வரிசைப்படுத்து",
+    "price": "விலை",
+    "quantity": "அளவு",
+    "total": "மொத்தம்",
+    "subtotal": "துணை மொத்தம்",
+    "tax": "வரி",
+    "shipping": "அனுப்புதல்"
+  },
+  "auth": {
+    "login": "உள்நுழை",
+    "register": "பதிவு செய்",
+    "logout": "வெளியேறு",
+    "username": "பயனர் பெயர்",
+    "email": "மின்னஞ்சல்",
+    "phone": "தொலைபேசி",
+    "password": "கடவுச்சொல்",
+    "confirmPassword": "கடவுச்சொல்லை உறுதிப்படுத்து",
+    "forgotPassword": "கடவுச்சொல்லை மறந்துவிட்டீர்களா?",
+    "loginSuccess": "வெற்றிகரமாக உள்நுழைந்தது",
+    "registerSuccess": "வெற்றிகரமாக பதிவு செய்யப்பட்டது",
+    "loginError": "உள்நுழைவு தோல்வி",
+    "registerError": "பதிவு தோல்வி"
+  },
+  "navigation": {
+    "home": "முகப்பு",
+    "products": "தயாரிப்புகள்",
+    "cart": "கூடை",
+    "orders": "ஆர்டர்கள்",
+    "profile": "சுயவிவரம்",
+    "seller": "விற்பனையாளர்",
+    "admin": "நிர்வாகம்"
+  },
+  "home": {
+    "welcome": "டைனி டிரெயிலுக்கு வரவேற்கிறோம்",
+    "searchByPincode": "பின் குறியீட்டால் தேடு",
+    "enterPincode": "உங்கள் பின் குறியீட்டை உள்ளிடவும்",
+    "findProducts": "உங்களுக்கு அருகிலுள்ள தயாரிப்புகளைக் கண்டறியவும்",
+    "popularCategories": "பிரபலமான வகைகள்",
+    "recentProducts": "சமீபத்திய தயாரிப்புகள்"
+  },
+  "products": {
+    "productList": "தயாரிப்புகள்",
+    "productDetail": "தயாரிப்பு விவரங்கள்",
+    "addToCart": "கூடையில் சேர்",
+    "buyNow": "இப்போது வாங்கு",
+    "description": "விளக்கம்",
+    "seller": "விற்பனையாளர்",
+    "category": "வகை",
+    "noProducts": "தயாரிப்புகள் எதுவும் கிடைக்கவில்லை",
+    "searchResults": "தேடல் முடிவுகள்"
+  },
+  "seller": {
+    "onboard": "விற்பனையாளர் பதிவு",
+    "shopName": "கடை பெயர்",
+    "address": "முகவரி",
+    "pincode": "பின் குறியீடு",
+    "description": "கடை விளக்கம்",
+    "becomeSeller": "விற்பனையாளராக மாறு",
+    "addProduct": "தயாரிப்பு சேர்",
+    "productName": "தயாரிப்பு பெயர்",
+    "productDescription": "தயாரிப்பு விளக்கம்",
+    "productPrice": "தயாரிப்பு விலை",
+    "productImage": "தயாரிப்பு படம்",
+    "voiceInput": "குரல் உள்ளீடு",
+    "tapToSpeak": "பேச அழுத்தவும்",
+    "listening": "கேட்டுக்கொண்டிருக்கிறது...",
+    "productAdded": "தயாரிப்பு வெற்றிகரமாக சேர்க்கப்பட்டது"
+  },
+  "cart": {
+    "cart": "கூடை",
+    "emptyCart": "உங்கள் கூடை காலியாக உள்ளது",
+    "removeItem": "பொருளை நீக்கு",
+    "updateQuantity": "அளவை புதுப்பிக்கவும்",
+    "proceedToCheckout": "செக்அவுட்டுக்கு செல்லவும்",
+    "itemRemoved": "பொருள் கூடையிலிருந்து நீக்கப்பட்டது"
+  },
+  "checkout": {
+    "checkout": "செக்அவுட்",
+    "deliveryAddress": "விநியோக முகவரி",
+    "paymentMethod": "பணம் செலுத்தும் முறை",
+    "upiPayment": "UPI பணம் செலுத்துதல்",
+    "placeOrder": "ஆர்டர் செய்",
+    "orderPlaced": "ஆர்டர் வெற்றிகரமாக செய்யப்பட்டது",
+    "upiId": "UPI ஐடி",
+    "scanQR": "QR குறியீட்டை ஸ்கேன் செய்யவும்",
+    "payNow": "இப்போது பணம் செலுத்தவும்"
+  },
+  "orders": {
+    "orders": "ஆர்டர்கள்",
+    "orderHistory": "ஆர்டர் வரலாறு",
+    "orderStatus": "ஆர்டர் நிலை",
+    "orderId": "ஆர்டர் ஐடி",
+    "orderDate": "ஆர்டர் தேதி",
+    "deliveryDate": "விநியோக தேதி",
+    "trackOrder": "ஆர்டரைக் கண்காணிக்கவும்",
+    "pending": "நிலுவையில்",
+    "confirmed": "உறுதிப்படுத்தப்பட்டது",
+    "shipped": "அனுப்பப்பட்டது",
+    "delivered": "விநியோகிக்கப்பட்டது",
+    "cancelled": "ரத்து செய்யப்பட்டது"
+  },
+  "profile": {
+    "profile": "சுயவிவரம்",
+    "editProfile": "சுயவிவரத்தை திருத்தவும்",
+    "settings": "அமைப்புகள்",
+    "language": "மொழி",
+    "notifications": "அறிவிப்புகள்",
+    "help": "உதவி",
+    "about": "பற்றி",
+    "version": "பதிப்பு"
+  },
+  "admin": {
+    "adminPanel": "நிர்வாக பலகை",
+    "manageOrders": "ஆர்டர்களை நிர்வகிக்கவும்",
+    "manageUsers": "பயனர்களை நிர்வகிக்கவும்",
+    "manageProducts": "தயாரிப்புகளை நிர்வகிக்கவும்",
+    "analytics": "பகுப்பாய்வு",
+    "updateOrderStatus": "ஆர்டர் நிலையை புதுப்பிக்கவும்"
+  },
+  "vendor": {
+    "story": "கதை",
+    "products": "தயாரிப்புகள்",
+    "availability": "இருப்பு",
+    "specialties": "சிறப்பு",
+    "subscriptionPlans": "சந்தா திட்டங்கள்",
+    "distance": "தொலைவு",
+    "verified": "சரிபார்க்கப்பட்ட வீட்டு சமையலறை",
+    "voiceOrder": "குரல் ஆர்டர்",
+    "subscribe": "சந்தாவு",
+    "viewProfile": "சுயவிவரத்தைக் காண்க"
+  },
+  "map": {
+    "nearbyVendors": "அருகிலுள்ள விற்பனையாளர்கள்",
+    "category": "வகை",
+    "openNow": "இப்போது திறந்திருக்கிறது",
+    "subscriptionAvailable": "சந்தா உள்ளது",
+    "radiusSlider": "தேடல் ஆரம் (கி.மீ)"
+  },
+  "concierge": {
+    "title": "AI உதவியாளர்",
+    "listeningText": "கேட்டுக்கொண்டிருக்கிறது...",
+    "finalTranscript": "நீங்கள் சொன்னது:",
+    "editTranscript": "உங்கள் செய்தியைத் திருத்தவும்:",
+    "sendButton": "அனுப்பு",
+    "response": "பரிந்துரை",
+    "addToCart": "கூடையில் சேர்"
+  },
+  "sharedCart": {
+    "createCart": "பகிரப்பட்ட கூடை உருவாக்கு",
+    "joinCart": "பகிரப்பட்ட கூடையில் சேர்",
+    "cartCode": "கூடை குறியீடு",
+    "enterCode": "4-எழுத்து குறியீட்டை உள்ளிடவும்",
+    "participants": "பங்கேற்பாளர்கள்",
+    "addedBy": "{{name}} சேர்த்தார்"
+  }
+}

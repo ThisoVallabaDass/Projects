@@ -1,0 +1,15 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    dangling_library_doc_comments: ignore
+
+linter:
+  rules:
+    prefer_const_constructors: false
+    prefer_const_declarations: false
+    prefer_final_fields: false
+    unnecessary_to_list_in_spreads: false
+    unnecessary_underscores: false
+    unnecessary_string_escapes: false
+    avoid_print: false

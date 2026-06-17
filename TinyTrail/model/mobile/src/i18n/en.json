@@ -1,0 +1,167 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "price": "Price",
+    "quantity": "Quantity",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "tax": "Tax",
+    "shipping": "Shipping"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "username": "Username",
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot Password?",
+    "loginSuccess": "Login successful",
+    "registerSuccess": "Registration successful",
+    "loginError": "Login failed",
+    "registerError": "Registration failed"
+  },
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "cart": "Cart",
+    "orders": "Orders",
+    "profile": "Profile",
+    "seller": "Seller",
+    "admin": "Admin"
+  },
+  "home": {
+    "welcome": "Welcome to Tiny Trail",
+    "searchByPincode": "Search by Pincode",
+    "enterPincode": "Enter your pincode",
+    "findProducts": "Find products near you",
+    "popularCategories": "Popular Categories",
+    "recentProducts": "Recent Products"
+  },
+  "products": {
+    "productList": "Products",
+    "productDetail": "Product Details",
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "description": "Description",
+    "seller": "Seller",
+    "category": "Category",
+    "noProducts": "No products found",
+    "searchResults": "Search Results"
+  },
+  "seller": {
+    "onboard": "Seller Onboarding",
+    "shopName": "Shop Name",
+    "address": "Address",
+    "pincode": "Pincode",
+    "description": "Shop Description",
+    "becomeSeller": "Become a Seller",
+    "addProduct": "Add Product",
+    "productName": "Product Name",
+    "productDescription": "Product Description",
+    "productPrice": "Product Price",
+    "productImage": "Product Image",
+    "voiceInput": "Voice Input",
+    "tapToSpeak": "Tap to speak",
+    "listening": "Listening...",
+    "productAdded": "Product added successfully"
+  },
+  "cart": {
+    "cart": "Cart",
+    "emptyCart": "Your cart is empty",
+    "removeItem": "Remove Item",
+    "updateQuantity": "Update Quantity",
+    "proceedToCheckout": "Proceed to Checkout",
+    "itemRemoved": "Item removed from cart"
+  },
+  "checkout": {
+    "checkout": "Checkout",
+    "deliveryAddress": "Delivery Address",
+    "paymentMethod": "Payment Method",
+    "upiPayment": "UPI Payment",
+    "placeOrder": "Place Order",
+    "orderPlaced": "Order placed successfully",
+    "upiId": "UPI ID",
+    "scanQR": "Scan QR Code",
+    "payNow": "Pay Now"
+  },
+  "orders": {
+    "orders": "Orders",
+    "orderHistory": "Order History",
+    "orderStatus": "Order Status",
+    "orderId": "Order ID",
+    "orderDate": "Order Date",
+    "deliveryDate": "Delivery Date",
+    "trackOrder": "Track Order",
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "shipped": "Shipped",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled"
+  },
+  "profile": {
+    "profile": "Profile",
+    "editProfile": "Edit Profile",
+    "settings": "Settings",
+    "language": "Language",
+    "notifications": "Notifications",
+    "help": "Help",
+    "about": "About",
+    "version": "Version"
+  },
+  "admin": {
+    "adminPanel": "Admin Panel",
+    "manageOrders": "Manage Orders",
+    "manageUsers": "Manage Users",
+    "manageProducts": "Manage Products",
+    "analytics": "Analytics",
+    "updateOrderStatus": "Update Order Status"
+  },
+  "vendor": {
+    "story": "Story",
+    "products": "Products",
+    "availability": "Availability",
+    "specialties": "Specialties",
+    "subscriptionPlans": "Subscription Plans",
+    "distance": "Distance",
+    "verified": "Verified Home Kitchen",
+    "voiceOrder": "Voice Order",
+    "subscribe": "Subscribe",
+    "viewProfile": "View Profile"
+  },
+  "map": {
+    "nearbyVendors": "Nearby Vendors",
+    "category": "Category",
+    "openNow": "Open Now",
+    "subscriptionAvailable": "Subscription Available",
+    "radiusSlider": "Search Radius (km)"
+  },
+  "concierge": {
+    "title": "AI Concierge",
+    "listeningText": "Listening...",
+    "finalTranscript": "You said:",
+    "editTranscript": "Edit your message:",
+    "sendButton": "Send",
+    "response": "Suggestion",
+    "addToCart": "Add to Cart"
+  },
+  "sharedCart": {
+    "createCart": "Create Shared Cart",
+    "joinCart": "Join Shared Cart",
+    "cartCode": "Cart Code",
+    "enterCode": "Enter 4-letter code",
+    "participants": "Participants",
+    "addedBy": "Added by {{name}}"
+  }
+}

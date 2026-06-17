@@ -1,0 +1,65 @@
+========================================================================
+                  BEGINNER SETUP & RUNNING GUIDE - TINYTRAIL
+========================================================================
+
+TinyTrail contains three main elements:
+1.  An AI Hygiene Python backend (app_enhanced.py)
+2.  A local Node.js database & server (server-v2.js)
+3.  A mobile React Native Expo app (model/mobile)
+
+Follow these simple steps to run the complete environment on your computer:
+
+------------------------------------------------------------------------
+STEP 1: ENVIRONMENT REQUIREMENT
+------------------------------------------------------------------------
+Make sure you have:
+*   Python (version 3.12 or 3.13)
+*   Node.js (LTS version) installed from https://nodejs.org/
+
+------------------------------------------------------------------------
+STEP 2: RUN THE PYTHON AI HYGIENE SERVICE
+------------------------------------------------------------------------
+The project has a pre-configured Python virtual environment.
+1.  Open your command prompt in the project root.
+2.  Activate the virtual environment:
+        Hygine\.venv\Scripts\activate
+3.  Navigate to the hygiene_service directory:
+        cd hygiene_service
+4.  Start the service:
+        python app_enhanced.py
+    *(The service starts on port 9000: http://localhost:9000)*
+
+------------------------------------------------------------------------
+STEP 3: RUN THE API TEST SUITE
+------------------------------------------------------------------------
+While keeping the server running in Step 2, open a second command prompt, 
+activate the environment again, and run:
+    python test_api.py
+*(You should see "All 4 tests passed!" indicating the AI is working!)*
+
+------------------------------------------------------------------------
+STEP 4: RUN THE DATABASE BACKEND
+------------------------------------------------------------------------
+The Node.js server acts as the primary app database:
+1.  Open another command prompt and navigate to the backend folder:
+        cd model/backend-simple
+2.  Run:
+        npm install
+3.  Set the virtual environment path and run the server:
+        (On Windows PowerShell):
+        $env:PYTHON_BIN='../../Hygine/.venv/Scripts/python.exe'
+        node server-v2.js
+    *(The server starts on port 8080)*
+
+------------------------------------------------------------------------
+STEP 5: RUN THE MOBILE FRONTEND (EXPO)
+------------------------------------------------------------------------
+To run the Expo React Native app:
+1.  Open a new command prompt and navigate to the mobile folder:
+        cd model/mobile
+2.  Install packages:
+        npm install
+3.  Start Expo:
+        npx expo start
+4.  Scan the QR code on your phone using the Expo Go app (Android/iOS) 
+    connected to the same Wi-Fi network to test the interface.

@@ -1,0 +1,28 @@
+{
+  "arch": "efficientnet_b0",
+  "best_val_acc": 0.6270967741935484,
+  "best_selection_score": 0.6666461417492243,
+  "best_epoch": 12,
+  "classes": [
+    "meets_standard",
+    "needs_work",
+    "shouldnt_work"
+  ],
+  "train_size": 3105,
+  "val_size": 775,
+  "final_metrics": {
+    "accuracy": 0.6270967741935484,
+    "loss": 0.8972237025537798
+  },
+  "per_class_recall": {
+    "meets_standard": 0.5331125827814569,
+    "needs_work": 0.6428571428571429,
+    "shouldnt_work": 0.7375565610859729
+  },
+  "per_class_precision": {
+    "meets_standard": 0.7092511013215859,
+    "needs_work": 0.6230769230769231,
+    "shouldnt_work": 0.5659722222222222
+  },
+  "trained_at": "2026-03-25T00:44:44.699707"
+}

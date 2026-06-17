@@ -1,0 +1,1709 @@
+this is the prompt i used earlier to develop the model but i dont know how well the agent earlier is developed the model so make the wrong this write in the model and make it work
+Hi Copilot — I’m working on the TinyTrail project in the model folder. I want you to implement a cohesive set of features (frontend + backend + infra + tests) that transform the repo into a voice-first, multilingual hyperlocal marketplace focused on home-run micro-vendors. Do everything listed below in one staging branch and create TODOs where secrets / manual config are required. Be pragmatic and modular: create interfaces and placeholders for external services (AI, image generation, payment), implement the glue code, and add unit tests + a CI workflow.
+
+Important repo info: root folder model contains the existing React frontend and Spring Boot backend. Use TypeScript for frontend and Java + Spring Boot for backend. Use Tailwind for styling on the frontend. Use PostgreSQL-compatible types for DB changes and Flyway for migrations.
+
+Goals (high-level)
+
+Add multilingual support (English + Tamil) to the frontend and preserve locale in user profile.
+
+Add a voice-first AI concierge UI that accepts Tamil/English mixed speech, sends queries to backend AI endpoint, shows conversational responses, and can create a pre-filled cart.
+
+Add clean, minimal Vendor listing UI and Vendor profile “story” page (video, handwritten menu image, story text, subscription toggle).
+
+Add Seller tools: seller form with voice-to-text, handwritten menu cleaning endpoint, and AI photo suggestion endpoint (placeholders integrated).
+
+Add Neighborhood Map view (Leaflet) showing vendors in radius with filters.
+
+Add Collaborative Cart (shared cart sessions using WebSocket/STOMP) with short room codes.
+
+Extend backend JPA entities (Vendor, Product, CollaborativeCart, Subscription) and provide Flyway SQL migration files.
+
+Implement POST /api/ai/query in backend with a pluggable AiService interface and an ExternalAiService stub that reads AI_API_KEY from environment.
+
+Add unit tests for AIController and VendorController (MockMvc + Mockito) and a GitHub Actions CI workflow.
+
+Add .env.example, README updates, and safety notes about secrets.
+
+Branch + run commands (do this first)
+
+Create a branch: git checkout -b feature/tinytrail-hyperlocal-ai
+
+Add instructions in repo root README how to run frontend/backend locally.
+
+Add .env.example with placeholders:
+
+AI_API_KEY=
+DB_URL=jdbc:postgresql://localhost:5432/tinytrail
+DB_USER=
+DB_PASS=
+JWT_SECRET=
+MAPS_API_KEY=
+STORAGE_S3_BUCKET=
+STORAGE_S3_KEY=
+STORAGE_S3_SECRET=
+
+1) Frontend changes (files, components & pages)
+
+Create/modify files under model/frontend (or the frontend folder present). Use TypeScript + React + Tailwind.
+
+1.1 i18n setup
+
+Create src/i18n.ts:
+
+Initialize react-i18next with two namespaces: en and ta.
+
+Lazy-load translation JSON from /public/locales/en/translation.json and /public/locales/ta/translation.json.
+
+Export i18n instance.
+
+Add public/locales/en/translation.json and public/locales/ta/translation.json with keys for main UI strings (Order, Subscribe, Voice Order, Nearby Vendors, Create Shared Cart, etc). Add a small set of microcopy keys used by components.
+
+Create src/components/LanguageSwitcher.tsx that toggles i18n.changeLanguage('en'|'ta') and persists preferredLocale in user profile via PUT /api/users/{id}/locale.
+
+1.2 VendorCard component
+
+Create src/components/VendorCard.tsx (TypeScript):
+
+Props: { vendor: Vendor }.
+
+Show: avatar, vendor name, short tagline, small badge list of specialties, distance (km), icons: Story, Voice Order, Subscribe, Order CTA.
+
+Styling: Tailwind, lots of whitespace, accessible buttons.
+
+Add fallback image / alt text.
+
+1.3 VendorProfile page
+
+Create src/pages/VendorProfile.tsx:
+
+Fetch /api/vendors/{id}.
+
+Render: hero image, optional intro video, handwritten menu image (click to view), story text, product grid, availability, “Subscribe” toggle (render subscription plans returned from API).
+
+If user.isSeller, show an edit button that opens SellerProductForm for quick edits.
+
+1.4 SellerProductForm component
+
+Create src/components/SellerProductForm.tsx:
+
+Fields: title (supports Tamil + English), price, category, image upload with preview, handwritten menu upload, custom options (dynamic key-value), spice-level dropdown, delivery/pickup toggle.
+
+Voice-to-text field that uses Web Speech API. Show interim transcript, allow corrections.
+
+On image upload, call backend endpoint /api/seller/generate-photo (POST multipart) — backend will return placeholder URL or job id.
+
+On submit, send multipart POST to /api/products.
+
+1.5 NeighborhoodMap component
+
+Create src/components/NeighborhoodMap.tsx:
+
+Use Leaflet (or fallback to Google Maps if MAPS_API_KEY present).
+
+Obtain browser geolocation (with permission); allow manual pincode entry.
+
+Show vendor pins within a radius slider (0.5–5 km).
+
+Filter toggles: category, open-now, subscription available.
+
+Clicking a pin shows a tooltip card with small VendorCard and CTAs (View Profile, Voice Order).
+
+1.6 AIConcierge component (voice-first)
+
+Create src/components/AIConcierge.tsx:
+
+Voice capture using Web Speech API; support mixed Tamil+English input by setting lang to ta-IN or en-IN depending on user preference but accept mixed speech.
+
+Show interim transcript and final transcript. Let user edit text before sending to backend.
+
+POST { text, locale, userLocation, preferences } to /api/ai/query.
+
+Render AI response as a conversational bubble stream with actionable buttons (e.g., Suggest: “Add 2 murukku from Vendor A” → clicking creates a pre-filled cart by calling /api/cart/draft or updating local cart).
+
+Allow single-click confirmation to convert draft into real order flow.
+
+1.7 CollaborativeCart (client)
+
+Create src/features/cart/CollaborativeCart.tsx:
+
+UI: Create Shared Cart (button → POST /api/carts/create → returns short code), Join Shared Cart (enter code → POST /api/carts/join).
+
+Use socket.io-client or STOMP over WebSocket to subscribe to /topic/cart/{code} and receive updates.
+
+Show real-time list of items and who added each item with timestamps and optimistic updates.
+
+1.8 Small UX polish + microcopy
+
+Update home screen: big search bar with placeholder microcopy: “Talk or type in Tamil or English: e.g. ‘evlo price murukku near me’” (two-line friendly copy).
+
+Clean vendor listing screen with large whitespace, simple sorting, and no promotions clutter.
+
+2) Backend changes (Java Spring Boot)
+
+Modify code under model/backend (or existing backend). Use Spring Boot, Spring Data JPA, Flyway.
+
+2.1 New / extended entities (JPA)
+
+Create/modify entities:
+
+Vendor:
+
+Add fields: String storyText, String storyVideoUrl, String handwrittenMenuUrl, boolean isVerifiedHomeKitchen, List<SubscriptionPlan> subscriptionPlans (OneToMany).
+
+Keep existing relationships to Product.
+
+Product: add Map<String,String> customOptionsSchema (JSON), boolean isSubscriptionItem.
+
+CollaborativeCart entity:
+
+Fields: Long id, String cartCode (short human code), List<CartItem> items (OneToMany), Instant expiresAt, Set<User> participants.
+
+SubscriptionPlan: id, vendorId, name, price, frequencyEnum, detailsJson.
+
+Use @Type or @Convert for JSON fields if using PostgreSQL JSONB. Add appropriate DTOs and Mapper classes (or use MapStruct placeholders).
+
+2.2 Flyway migration
+
+Add db/migration/V2__add_vendor_story_subscription_cart.sql with:
+
+ALTER TABLE vendor ADD COLUMN story_text TEXT, story_video_url TEXT, handwritten_menu_url TEXT, is_verified_home_kitchen BOOLEAN DEFAULT FALSE;
+
+CREATE TABLE subscription_plan (...);
+
+CREATE TABLE collaborative_cart (...);
+
+CREATE TABLE cart_item (...);
+Add indices on vendor_id, cart_code.
+
+2.3 Controllers & Services
+
+Create/extend controllers and services:
+
+VendorController
+
+GET /api/vendors/{id} — returns vendor + story + products + subscription plans + availability.
+
+POST /api/vendors/{id}/subscribe — create subscription for the authenticated user (mock payment integration).
+
+POST /api/vendors/{id}/verify — admin endpoint to set isVerifiedHomeKitchen.
+
+AIController
+
+POST /api/ai/query — Accept request { text, locale, userLocation, context }.
+
+Delegate to AiService interface.
+
+AiService should return a structured response:
+
+{
+  "intent":"order|search|info",
+  "vendorSuggestions":[ { "vendorId":123, "score":0.92 } ],
+  "cartDraft":[ { "productId":456, "quantity":2 } ],
+  "uiActions":[ { "type":"add_to_cart", "label":"Add suggested items", "payload":{...} } ],
+  "text":"assistant message"
+}
+
+
+Implement ExternalAiService that is a stub calling an external LLM HTTP API using env AI_API_KEY. Provide a concrete TODO to wire in OpenAI/Anthropic/etc. For now return a deterministic mock response for local dev + unit tests.
+
+CollaborativeCartController + WebSocket
+
+REST endpoints:
+
+POST /api/carts/create → returns { code: "AB12", expiresAt }.
+
+POST /api/carts/join → verifies code, returns current cart.
+
+WebSocket config using STOMP:
+
+Topic: /topic/cart/{code}.
+
+When REST/actions update a cart, broadcast to the topic. Implement CollaborativeCartService to manage rooms and persistence.
+
+Seller tools endpoints
+
+POST /api/seller/clean-menu — Accept multipart image, run OCR (use Tesseract wrapper or a mock), return {"text":"...","cleanedJson":{}}. Add TODO for LLM rewriting.
+
+POST /api/seller/generate-photo — Accept description or image, returns job id or generated URL (mock). Add TODO to call an external image generation service.
+
+2.4 Security & locale
+
+Add preferredLocale field to User entity and persist during login/update.
+
+For endpoints that speak to AI or return UI text, accept locale param and pass through to AiService.
+
+2.5 Tests
+
+Create unit tests for AIController and VendorController:
+
+Use @WebMvcTest + MockMvc and Mockito to mock AiService and VendorService.
+
+Verify response shape and that AIController delegates properly and returns status 200 for successful queries.
+
+Add simple integration test for collaborative cart create/join.
+
+3) WebSocket / Real-time
+
+Add WebSocketConfig.java that enables STOMP and SockJS fallback.
+
+Implement broadcasting of cart state to /topic/cart/{code} after any change.
+
+Frontend connects with socket.io-client or STOMP client to subscribe and send addItem events.
+
+4) AI service interface & mock implementation
+
+Define AiService interface in backend with method AiResponse query(AiRequest).
+
+Create ExternalAiService that loads AI_API_KEY from env. For now, implement a mock that:
+
+If text contains keywords like “murukku”, returns vendor suggestions from vendor repository within 3 km of provided userLocation sorted by rating.
+
+Otherwise returns general search suggestions.
+
+Add config to pick ExternalAiService bean if AI_API_KEY present, else register MockAiService for dev.
+
+5) Payment / Subscription stub
+
+Implement SubscriptionController with endpoints:
+
+POST /api/subscriptions (create subscription): validate plan, create subscription record with status=CREATED, return mock paymentToken.
+
+Provide webhook placeholder POST /api/payment/webhook to complete subscription activation. Add TODO for real payment gateway integration (Razorpay/PhonePe).
+
+6) CI + Tests
+
+Add .github/workflows/ci.yml:
+
+On push and PR to main or feature/*.
+
+Steps:
+
+Checkout
+
+Setup JDK 17 (or project default)
+
+Setup Node 18 (or project default)
+
+Install frontend deps (npm ci) and run npm test --if-present
+
+Run backend ./gradlew test
+
+Cache gradle and node modules.
+
+Exit non-zero on test failures.
+
+7) README and developer notes
+
+Update README with:
+
+How to run frontend/backend locally.
+
+How to set env vars and the .env.example.
+
+Notes on AI_API_KEY placeholder and how to wire in OpenAI (example cURL).
+
+Security note: never commit secrets.
+
+8) Extra safety and UX details (important)
+
+Add rate limiting to POST /api/ai/query to avoid abusive calls (simple in-memory throttle).
+
+Sanitize any AI-generated text before displaying in UI (escape HTML, limit length).
+
+When using Web Speech API, fall back gracefully if not supported; allow text fallback.
+
+When calling external services (AI, image gen), always return job-id for async processes and provide polling endpoint /api/jobs/{id}.
+
+9) Output expectations & TODOs
+
+For each created file, add a header comment with // TODO: review / wire external API / add secrets.
+
+For all external integrations (LLM, image gen, payment, maps), add a small example snippet in README on how to set keys. Do not embed keys in code.
+
+Ensure all API responses include locale aware fields when relevant.
+
+10) Tests & quick mocks for local dev
+
+Provide a seed dataset insertion script (Flyway V2 or a data.sql for dev) to create:
+
+5 sample vendors with storyText, one with isVerifiedHomeKitchen=true.
+
+A few products with custom options.
+
+One sample collaborative cart code "TEST01".
+
+Final instructions to Copilot
+
+Produce all new frontend files under model/<frontend-folder>/src/... and backend Java under model/<backend-folder>/src/... with appropriate package names matching the repo pattern.
+
+Add Flyway migration files under model/<backend-folder>/src/main/resources/db/migration/.
+
+Add unit tests under src/test/....
+
+Add the GitHub Actions workflow file at .github/workflows/ci.yml.
+
+Keep code modular and small — if a feature requires many helper functions, split them into separate files and export them.
+
+Where full implementation of an external integration is not possible in this offline environment, create a clear Mock implementation and // TODO comments with example request/response shapes.
+
+Paste this entire instruction into Copilot Chat and ask it to “Generate code and files according to the spec.” After generation, run the quick checklist:
+
+git add .
+git commit -m "feat: hyperlocal ai concierge + vendor stories + collaborative cart + multilingual"
+git push --set-upstream origin feature/tinytrail-hyperlocal-ai
+
+i want a fully funcional mobile application withh all the above features
+dvelop it
+do whatever the chhanges needed
+build the app
+connect the app with the files outside
+get the references and build it in the flutter app 
+firebase is also connectedd i think 
+this is the prompt i used earlier to develop the model but i dont know how well the agent earlier is developed the model so make the wrong this write in the model and make it work
+Hi Copilot — I’m working on the TinyTrail project in the model folder. I want you to implement a cohesive set of features (frontend + backend + infra + tests) that transform the repo into a voice-first, multilingual hyperlocal marketplace focused on home-run micro-vendors. Do everything listed below in one staging branch and create TODOs where secrets / manual config are required. Be pragmatic and modular: create interfaces and placeholders for external services (AI, image generation, payment), implement the glue code, and add unit tests + a CI workflow.
+
+Important repo info: root folder model contains the existing React frontend and Spring Boot backend. Use TypeScript for frontend and Java + Spring Boot for backend. Use Tailwind for styling on the frontend. Use PostgreSQL-compatible types for DB changes and Flyway for migrations.
+
+Goals (high-level)
+
+Add multilingual support (English + Tamil) to the frontend and preserve locale in user profile.
+
+Add a voice-first AI concierge UI that accepts Tamil/English mixed speech, sends queries to backend AI endpoint, shows conversational responses, and can create a pre-filled cart.
+
+Add clean, minimal Vendor listing UI and Vendor profile “story” page (video, handwritten menu image, story text, subscription toggle).
+
+Add Seller tools: seller form with voice-to-text, handwritten menu cleaning endpoint, and AI photo suggestion endpoint (placeholders integrated).
+
+Add Neighborhood Map view (Leaflet) showing vendors in radius with filters.
+
+Add Collaborative Cart (shared cart sessions using WebSocket/STOMP) with short room codes.
+
+Extend backend JPA entities (Vendor, Product, CollaborativeCart, Subscription) and provide Flyway SQL migration files.
+
+Implement POST /api/ai/query in backend with a pluggable AiService interface and an ExternalAiService stub that reads AI_API_KEY from environment.
+
+Add unit tests for AIController and VendorController (MockMvc + Mockito) and a GitHub Actions CI workflow.
+
+Add .env.example, README updates, and safety notes about secrets.
+
+Branch + run commands (do this first)
+
+Create a branch: git checkout -b feature/tinytrail-hyperlocal-ai
+
+Add instructions in repo root README how to run frontend/backend locally.
+
+Add .env.example with placeholders:
+
+AI_API_KEY=
+DB_URL=jdbc:postgresql://localhost:5432/tinytrail
+DB_USER=
+DB_PASS=
+JWT_SECRET=
+MAPS_API_KEY=
+STORAGE_S3_BUCKET=
+STORAGE_S3_KEY=
+STORAGE_S3_SECRET=
+
+1) Frontend changes (files, components & pages)
+
+Create/modify files under model/frontend (or the frontend folder present). Use TypeScript + React + Tailwind.
+
+1.1 i18n setup
+
+Create src/i18n.ts:
+
+Initialize react-i18next with two namespaces: en and ta.
+
+Lazy-load translation JSON from /public/locales/en/translation.json and /public/locales/ta/translation.json.
+
+Export i18n instance.
+
+Add public/locales/en/translation.json and public/locales/ta/translation.json with keys for main UI strings (Order, Subscribe, Voice Order, Nearby Vendors, Create Shared Cart, etc). Add a small set of microcopy keys used by components.
+
+Create src/components/LanguageSwitcher.tsx that toggles i18n.changeLanguage('en'|'ta') and persists preferredLocale in user profile via PUT /api/users/{id}/locale.
+
+1.2 VendorCard component
+
+Create src/components/VendorCard.tsx (TypeScript):
+
+Props: { vendor: Vendor }.
+
+Show: avatar, vendor name, short tagline, small badge list of specialties, distance (km), icons: Story, Voice Order, Subscribe, Order CTA.
+
+Styling: Tailwind, lots of whitespace, accessible buttons.
+
+Add fallback image / alt text.
+
+1.3 VendorProfile page
+
+Create src/pages/VendorProfile.tsx:
+
+Fetch /api/vendors/{id}.
+
+Render: hero image, optional intro video, handwritten menu image (click to view), story text, product grid, availability, “Subscribe” toggle (render subscription plans returned from API).
+
+If user.isSeller, show an edit button that opens SellerProductForm for quick edits.
+
+1.4 SellerProductForm component
+
+Create src/components/SellerProductForm.tsx:
+
+Fields: title (supports Tamil + English), price, category, image upload with preview, handwritten menu upload, custom options (dynamic key-value), spice-level dropdown, delivery/pickup toggle.
+
+Voice-to-text field that uses Web Speech API. Show interim transcript, allow corrections.
+
+On image upload, call backend endpoint /api/seller/generate-photo (POST multipart) — backend will return placeholder URL or job id.
+
+On submit, send multipart POST to /api/products.
+
+1.5 NeighborhoodMap component
+
+Create src/components/NeighborhoodMap.tsx:
+
+Use Leaflet (or fallback to Google Maps if MAPS_API_KEY present).
+
+Obtain browser geolocation (with permission); allow manual pincode entry.
+
+Show vendor pins within a radius slider (0.5–5 km).
+
+Filter toggles: category, open-now, subscription available.
+
+Clicking a pin shows a tooltip card with small VendorCard and CTAs (View Profile, Voice Order).
+
+1.6 AIConcierge component (voice-first)
+
+Create src/components/AIConcierge.tsx:
+
+Voice capture using Web Speech API; support mixed Tamil+English input by setting lang to ta-IN or en-IN depending on user preference but accept mixed speech.
+
+Show interim transcript and final transcript. Let user edit text before sending to backend.
+
+POST { text, locale, userLocation, preferences } to /api/ai/query.
+
+Render AI response as a conversational bubble stream with actionable buttons (e.g., Suggest: “Add 2 murukku from Vendor A” → clicking creates a pre-filled cart by calling /api/cart/draft or updating local cart).
+
+Allow single-click confirmation to convert draft into real order flow.
+
+1.7 CollaborativeCart (client)
+
+Create src/features/cart/CollaborativeCart.tsx:
+
+UI: Create Shared Cart (button → POST /api/carts/create → returns short code), Join Shared Cart (enter code → POST /api/carts/join).
+
+Use socket.io-client or STOMP over WebSocket to subscribe to /topic/cart/{code} and receive updates.
+
+Show real-time list of items and who added each item with timestamps and optimistic updates.
+
+1.8 Small UX polish + microcopy
+
+Update home screen: big search bar with placeholder microcopy: “Talk or type in Tamil or English: e.g. ‘evlo price murukku near me’” (two-line friendly copy).
+
+Clean vendor listing screen with large whitespace, simple sorting, and no promotions clutter.
+
+2) Backend changes (Java Spring Boot)
+
+Modify code under model/backend (or existing backend). Use Spring Boot, Spring Data JPA, Flyway.
+
+2.1 New / extended entities (JPA)
+
+Create/modify entities:
+
+Vendor:
+
+Add fields: String storyText, String storyVideoUrl, String handwrittenMenuUrl, boolean isVerifiedHomeKitchen, List<SubscriptionPlan> subscriptionPlans (OneToMany).
+
+Keep existing relationships to Product.
+
+Product: add Map<String,String> customOptionsSchema (JSON), boolean isSubscriptionItem.
+
+CollaborativeCart entity:
+
+Fields: Long id, String cartCode (short human code), List<CartItem> items (OneToMany), Instant expiresAt, Set<User> participants.
+
+SubscriptionPlan: id, vendorId, name, price, frequencyEnum, detailsJson.
+
+Use @Type or @Convert for JSON fields if using PostgreSQL JSONB. Add appropriate DTOs and Mapper classes (or use MapStruct placeholders).
+
+2.2 Flyway migration
+
+Add db/migration/V2__add_vendor_story_subscription_cart.sql with:
+
+ALTER TABLE vendor ADD COLUMN story_text TEXT, story_video_url TEXT, handwritten_menu_url TEXT, is_verified_home_kitchen BOOLEAN DEFAULT FALSE;
+
+CREATE TABLE subscription_plan (...);
+
+CREATE TABLE collaborative_cart (...);
+
+CREATE TABLE cart_item (...);
+Add indices on vendor_id, cart_code.
+
+2.3 Controllers & Services
+
+Create/extend controllers and services:
+
+VendorController
+
+GET /api/vendors/{id} — returns vendor + story + products + subscription plans + availability.
+
+POST /api/vendors/{id}/subscribe — create subscription for the authenticated user (mock payment integration).
+
+POST /api/vendors/{id}/verify — admin endpoint to set isVerifiedHomeKitchen.
+
+AIController
+
+POST /api/ai/query — Accept request { text, locale, userLocation, context }.
+
+Delegate to AiService interface.
+
+AiService should return a structured response:
+
+{
+  "intent":"order|search|info",
+  "vendorSuggestions":[ { "vendorId":123, "score":0.92 } ],
+  "cartDraft":[ { "productId":456, "quantity":2 } ],
+  "uiActions":[ { "type":"add_to_cart", "label":"Add suggested items", "payload":{...} } ],
+  "text":"assistant message"
+}
+
+
+Implement ExternalAiService that is a stub calling an external LLM HTTP API using env AI_API_KEY. Provide a concrete TODO to wire in OpenAI/Anthropic/etc. For now return a deterministic mock response for local dev + unit tests.
+
+CollaborativeCartController + WebSocket
+
+REST endpoints:
+
+POST /api/carts/create → returns { code: "AB12", expiresAt }.
+
+POST /api/carts/join → verifies code, returns current cart.
+
+WebSocket config using STOMP:
+
+Topic: /topic/cart/{code}.
+
+When REST/actions update a cart, broadcast to the topic. Implement CollaborativeCartService to manage rooms and persistence.
+
+Seller tools endpoints
+
+POST /api/seller/clean-menu — Accept multipart image, run OCR (use Tesseract wrapper or a mock), return {"text":"...","cleanedJson":{}}. Add TODO for LLM rewriting.
+
+POST /api/seller/generate-photo — Accept description or image, returns job id or generated URL (mock). Add TODO to call an external image generation service.
+
+2.4 Security & locale
+
+Add preferredLocale field to User entity and persist during login/update.
+
+For endpoints that speak to AI or return UI text, accept locale param and pass through to AiService.
+
+2.5 Tests
+
+Create unit tests for AIController and VendorController:
+
+Use @WebMvcTest + MockMvc and Mockito to mock AiService and VendorService.
+
+Verify response shape and that AIController delegates properly and returns status 200 for successful queries.
+
+Add simple integration test for collaborative cart create/join.
+
+3) WebSocket / Real-time
+
+Add WebSocketConfig.java that enables STOMP and SockJS fallback.
+
+Implement broadcasting of cart state to /topic/cart/{code} after any change.
+
+Frontend connects with socket.io-client or STOMP client to subscribe and send addItem events.
+
+4) AI service interface & mock implementation
+
+Define AiService interface in backend with method AiResponse query(AiRequest).
+
+Create ExternalAiService that loads AI_API_KEY from env. For now, implement a mock that:
+
+If text contains keywords like “murukku”, returns vendor suggestions from vendor repository within 3 km of provided userLocation sorted by rating.
+
+Otherwise returns general search suggestions.
+
+Add config to pick ExternalAiService bean if AI_API_KEY present, else register MockAiService for dev.
+
+5) Payment / Subscription stub
+
+Implement SubscriptionController with endpoints:
+
+POST /api/subscriptions (create subscription): validate plan, create subscription record with status=CREATED, return mock paymentToken.
+
+Provide webhook placeholder POST /api/payment/webhook to complete subscription activation. Add TODO for real payment gateway integration (Razorpay/PhonePe).
+
+6) CI + Tests
+
+Add .github/workflows/ci.yml:
+
+On push and PR to main or feature/*.
+
+Steps:
+
+Checkout
+
+Setup JDK 17 (or project default)
+
+Setup Node 18 (or project default)
+
+Install frontend deps (npm ci) and run npm test --if-present
+
+Run backend ./gradlew test
+
+Cache gradle and node modules.
+
+Exit non-zero on test failures.
+
+7) README and developer notes
+
+Update README with:
+
+How to run frontend/backend locally.
+
+How to set env vars and the .env.example.
+
+Notes on AI_API_KEY placeholder and how to wire in OpenAI (example cURL).
+
+Security note: never commit secrets.
+
+8) Extra safety and UX details (important)
+
+Add rate limiting to POST /api/ai/query to avoid abusive calls (simple in-memory throttle).
+
+Sanitize any AI-generated text before displaying in UI (escape HTML, limit length).
+
+When using Web Speech API, fall back gracefully if not supported; allow text fallback.
+
+When calling external services (AI, image gen), always return job-id for async processes and provide polling endpoint /api/jobs/{id}.
+
+9) Output expectations & TODOs
+
+For each created file, add a header comment with // TODO: review / wire external API / add secrets.
+
+For all external integrations (LLM, image gen, payment, maps), add a small example snippet in README on how to set keys. Do not embed keys in code.
+
+Ensure all API responses include locale aware fields when relevant.
+
+10) Tests & quick mocks for local dev
+
+Provide a seed dataset insertion script (Flyway V2 or a data.sql for dev) to create:
+
+5 sample vendors with storyText, one with isVerifiedHomeKitchen=true.
+
+A few products with custom options.
+
+One sample collaborative cart code "TEST01".
+
+Final instructions to Copilot
+
+Produce all new frontend files under model/<frontend-folder>/src/... and backend Java under model/<backend-folder>/src/... with appropriate package names matching the repo pattern.
+
+Add Flyway migration files under model/<backend-folder>/src/main/resources/db/migration/.
+
+Add unit tests under src/test/....
+
+Add the GitHub Actions workflow file at .github/workflows/ci.yml.
+
+Keep code modular and small — if a feature requires many helper functions, split them into separate files and export them.
+
+Where full implementation of an external integration is not possible in this offline environment, create a clear Mock implementation and // TODO comments with example request/response shapes.
+
+Paste this entire instruction into Copilot Chat and ask it to “Generate code and files according to the spec.” After generation, run the quick checklist:
+
+git add .
+git commit -m "feat: hyperlocal ai concierge + vendor stories + collaborative cart + multilingual"
+git push --set-upstream origin feature/tinytrail-hyperlocal-ai
+
+i want a fully funcional mobile application withh all the above features
+dvelop it
+do whatever the chhanges needed
+
+this was somehtign i had before to develop the app
+and there is a references i build earlier using expo 
+i need a similar output and funcitonality for the app
+i will again give the prompt to develop kindly do thte needfull and develop it
+You are working on an existing React Native project.
+
+DO NOT break existing navigation, API calls, or folder structure.
+
+Follow these rules:
+- Clean modern UI (minimal, soft colors, rounded corners)
+- Mobile-first design
+- Reusable components
+- Use functional components with hooks
+- Keep styles in StyleSheet
+- Do not remove existing logic, only enhance UI
+
+Primary theme:
+- Background: #F8F9FA
+- Primary color: #6C63FF
+- Secondary: #00BFA6
+- Text: #333
+
+Make UI simple for non-technical users (like small vendors)
+
+Now implement the following screen:
+logging screen
+Create a modern login screen.
+
+Features:
+- App title: "Tiny Trail"
+- Subtitle: "From Home to Your Hands"
+- Input fields:
+  - Email
+  - Password
+- Login button
+
+Extra:
+- Toggle buttons:
+   [ Customer Login ] [ Vendor Login ]
+
+- “Don’t have an account? Register”
+
+UI:
+- Centered card layout
+- Rounded input fields
+- Soft shadow
+- Clean spacing
+
+Navigation:
+- On success → navigate to Dashboard
+
+Do not change existing API call logic
+registration screen 
+Create a registration screen.
+
+Fields:
+- Full Name
+- Email
+- Password
+- Phone Number
+- Pincode
+
+Extra:
+- Role selection:
+   - Customer
+   - Vendor
+
+If Vendor selected:
+- Show extra field:
+   - Business Type (Food / Tailor / Others)
+
+UI:
+- Scrollable form
+- Clean spacing
+- Rounded inputs
+- Highlight selected role
+
+Button:
+- Register
+
+Navigation:
+- After success → Login screen
+
+Do not change backend integration
+Create a dashboard screen.
+
+Layout:
+- Top header:
+   - Greeting: "Hello, [User]"
+   - Small profile icon
+
+Main sections (grid layout):
+- Browse Products
+- Sell Product (only for vendors)
+- My Orders
+- My Listings (vendors)
+- Notifications
+- Profile
+
+UI:
+- Card-based layout
+- Icons for each option
+- Soft shadows
+
+Behavior:
+- Clicking each navigates to respective screen
+
+Make it simple and intuitive for first-time users
+Create a product browsing screen.
+
+Features:
+- Search bar at top
+- Pincode shown (user location)
+
+Product list:
+- Card layout
+- Each card contains:
+   - Product image
+   - Title
+   - Price
+   - Seller name
+
+UI:
+- Grid or vertical list
+- Rounded cards
+- Clean spacing
+
+On click:
+- Navigate to Product Details screen
+
+Do not change API fetching logic
+Create a product details screen.
+
+Layout:
+- Large product image
+- Title
+- Price
+- Description
+- Seller details
+
+Button:
+- "Order Now"
+
+UI:
+- Scrollable
+- Clean spacing
+- Highlight price
+
+On click:
+- Navigate to Order screen
+Create an order confirmation screen.
+
+Details:
+- Product summary
+- Quantity selector
+- Delivery address input
+
+Payment:
+- Button: "Pay via UPI"
+
+UI:
+- Clean card layout
+- Highlight total amount
+
+On confirm:
+- Call existing order API
+
+Do not modify backend logic
+Create a screen to show user orders.
+
+Each order card:
+- Product name
+- Price
+- Status (Pending / Confirmed / Delivered)
+- Date
+
+UI:
+- List view
+- Status color:
+   - Pending = Orange
+   - Confirmed = Blue
+   - Delivered = Green
+
+Make it clean and readable
+Create a product upload screen.
+
+Fields:
+- Product title
+- Description
+- Category
+- Price
+- Image upload
+
+UI:
+- Simple form
+- Large upload button
+
+Button:
+- "Add Product"
+
+On submit:
+- Call existing API
+
+Keep it very simple for non-technical users
+Create a screen showing vendor products.
+
+Each item:
+- Image
+- Title
+- Price
+
+Options:
+- Edit
+- Delete
+
+UI:
+- Card layout
+- Clean spacing
+
+Do not change backend logic
+You are working on the TinyTrails Flutter mobile app.
+
+Goal: Implement **Vendor Hygiene Gate Flow** after login.
+
+This is a critical feature: vendors must pass hygiene check BEFORE accessing dashboard.
+
+---
+
+# 🔹 FLOW
+
+After login success:
+
+IF user.role == "vendor":
+→ Navigate to HygieneCheckScreen
+ELSE:
+→ Navigate to Customer Home
+
+---
+
+# 🔹 CREATE SCREEN
+
+Create:
+`lib/screens/vendor/hygiene_check_screen.dart`
+
+---
+
+# 🔹 UI DESIGN
+
+* Fullscreen camera view
+
+* Overlay box (dashed border)
+
+* Instruction text:
+  "Capture your workspace for hygiene verification"
+
+* Button:
+  "Capture"
+
+---
+
+# 🔹 FUNCTIONALITY
+
+1. Open camera automatically
+2. Capture image
+3. Compress image
+4. Send to backend:
+
+POST /api/vendor/hygiene-check
+
+---
+
+# 🔹 RESPONSE HANDLING
+
+IF success:
+→ Show green check animation
+→ Navigate to Vendor Dashboard
+
+IF failure:
+→ Show red error message:
+"Hygiene check failed. Please clean your workspace."
+
+→ Show retry button
+
+---
+
+# 🔹 LOADING STATE
+
+While checking:
+
+* Show scanning animation
+* Disable inputs
+
+---
+
+# 🔹 ERROR CASES
+
+* No utensils detected
+* Blurry image
+* Low light
+
+Show user-friendly messages
+
+---
+
+# 🔹 SECURITY
+
+* Block navigation unless passed
+* Prevent bypass using back button
+
+---
+
+# 🔹 FILE STRUCTURE
+
+lib/screens/vendor/
+hygiene_check_screen.dart
+
+---
+
+# 🔹 OUTPUT
+
+Provide:
+
+* Full Flutter screen code
+* API call integration
+* Navigation logic update in login flow
+
+---
+
+Goal:
+Vendor must NEVER access dashboard without passing hygiene check.
+You are working on the TinyTrails Flutter application.
+
+Goal: Build a **modern, clean, dual-role login screen** with smooth transitions between Customer (Blue theme) and Vendor (Green theme).
+
+⚠️ IMPORTANT:
+
+* UI must be minimal, clean, and premium
+* No clutter
+* Use smooth animations
+* Focus on usability
+
+---
+
+# 🔹 SCREEN 1: SPLASH SCREEN
+
+Create:
+`lib/screens/splash_screen.dart`
+
+Requirements:
+
+* White background
+* Centered "TinyTrails" logo
+* Fade-in animation (1 second)
+* After 2 seconds → navigate to Login Screen
+* Logo should slightly move upward before transition
+
+---
+
+# 🔹 SCREEN 2: LOGIN SCREEN (DUAL ROLE)
+
+Create:
+`lib/screens/login_screen.dart`
+
+---
+
+## 🎯 CORE IDEA
+
+User can switch between:
+
+* Customer (Blue theme)
+* Vendor (Green theme)
+
+The entire UI should dynamically change color based on role.
+
+---
+
+## 🔹 ROLE TOGGLE (TOP)
+
+Design a pill-shaped toggle:
+
+* Background: light grey
+* Inside: sliding thumb
+* Default: Customer
+
+Behavior:
+
+* Left = Customer → Blue (#2563EB)
+* Right = Vendor → Green (#10B981)
+
+Animation:
+
+* Smooth sliding
+* Text color changes
+* UI theme updates instantly
+
+---
+
+## 🔹 INPUT FIELDS
+
+Use floating label text fields:
+
+Fields:
+
+1. Email
+2. Password
+
+Behavior:
+
+* Label floats up when typing
+* Rounded borders
+* Border color changes based on role (blue/green)
+
+---
+
+## 🔹 LOGIN BUTTON
+
+* Large pill-shaped button
+* Full width
+* Color = role color
+* Text: "Login"
+
+On press:
+
+* Call login function
+* Navigate based on role
+
+---
+
+## 🔹 GOOGLE LOGIN
+
+Below login button:
+
+* Divider: "OR"
+* White button with Google logo
+* Text: "Continue with Google"
+
+---
+
+## 🔹 SIGNUP LINK
+
+Bottom text:
+"Don't have an account? Sign up"
+
+Clickable → navigate to signup screen
+
+---
+
+# 🔹 STATE MANAGEMENT
+
+Use:
+
+* `StatefulWidget` OR `Provider` (simple)
+
+State:
+
+* selectedRole (customer/vendor)
+
+---
+
+# 🔹 THEMING
+
+Define:
+`lib/theme/app_theme.dart`
+
+Two themes:
+
+* CustomerTheme (Blue)
+* VendorTheme (Green)
+
+Switch dynamically
+
+---
+
+# 🔹 NAVIGATION
+
+After login:
+
+IF Customer:
+→ Home Screen (Consumer)
+
+IF Vendor:
+→ Vendor Dashboard
+
+---
+
+# 🔹 FILE STRUCTURE
+
+Create:
+
+lib/
+├── screens/
+│    ├── splash_screen.dart
+│    ├── login_screen.dart
+│
+├── theme/
+│    ├── app_theme.dart
+│
+├── widgets/
+│    ├── role_toggle.dart
+│    ├── custom_textfield.dart
+│    ├── primary_button.dart
+
+---
+
+# 🔹 ANIMATIONS
+
+* Use `AnimatedContainer` for toggle
+* Use `FadeTransition` for splash
+* Smooth color transitions
+
+---
+
+# 🔹 OUTPUT
+
+Give complete Flutter code for:
+
+1. Splash screen
+2. Login screen
+3. Role toggle widget
+4. Theme file
+5. Navigation logic
+
+---
+
+Goal:
+User should feel:
+"Wow, this app is clean and easy to use"
+You are working on improving an AI Hygiene Detection Model for the TinyTrails project.
+
+The goal is to significantly **increase accuracy and real-world robustness**, especially for **Indian kitchens, street vendors, and small food setups**.
+
+⚠️ IMPORTANT:
+
+* Do NOT assume clean lab environments
+* Focus on real-world noisy conditions
+* The model must IGNORE background (walls, paint, surroundings)
+* The model must FOCUS on:
+
+  * utensils
+  * stove
+  * cooking area cleanliness
+  * visible hygiene indicators
+
+---
+
+# 🔹 STEP 1: DATASET STRATEGY (VERY IMPORTANT)
+
+Design a dataset collection pipeline.
+
+We need 3 classes:
+
+1. CLEAN
+2. MODERATE
+3. UNSAFE
+
+### Define them clearly:
+
+CLEAN:
+
+* Clean utensils
+* No visible spills
+* Organized cooking area
+
+MODERATE:
+
+* Slight clutter
+* Minor spills
+* Acceptable but not ideal
+
+UNSAFE:
+
+* Dirty surfaces
+* Food waste visible
+* Unclean utensils
+
+---
+
+# 🔹 STEP 2: DATA COLLECTION (SCRAPING + MANUAL)
+
+Provide code/scripts to collect images from:
+
+1. Google Images
+2. YouTube frames (extract frames)
+3. Open datasets (food/kitchen datasets)
+
+Keywords:
+
+* "indian kitchen cooking"
+* "street food india"
+* "dirty kitchen india"
+* "clean cooking utensils"
+* "street vendor cart india"
+
+Store images in structured folders:
+dataset/
+clean/
+moderate/
+unsafe/
+
+---
+
+# 🔹 STEP 3: DATA CLEANING
+
+Implement script:
+
+* Remove duplicates
+* Remove blurred images
+* Resize to uniform size (224x224 or 256x256)
+* Normalize
+
+---
+
+# 🔹 STEP 4: DATA AUGMENTATION
+
+Apply:
+
+* brightness variation
+* rotation
+* zoom
+* blur
+* noise
+
+Goal:
+Make model robust to lighting + camera differences
+
+---
+
+# 🔹 STEP 5: BACKGROUND IGNORING (CRITICAL)
+
+Implement one of:
+
+OPTION A:
+
+* Use object detection to crop region (utensils/stove)
+
+OPTION B:
+
+* Use segmentation model (Mask R-CNN / U-Net) to isolate cooking area
+
+OPTION C (simpler):
+
+* Apply center-crop + random crop + blur background
+
+Explain which is easiest and implementable.
+
+---
+
+# 🔹 STEP 6: MODEL ARCHITECTURE
+
+Use transfer learning:
+
+Options:
+
+* MobileNetV2 (fast, lightweight)
+* ResNet50 (better accuracy)
+
+Implement:
+
+* load pretrained model
+* freeze base layers
+* add custom classification head (3 classes)
+
+---
+
+# 🔹 STEP 7: TRAINING PIPELINE
+
+Provide training script:
+
+* train/validation split (80/20)
+* batch size: 32
+* optimizer: Adam
+* loss: categorical crossentropy
+* metrics: accuracy, precision, recall
+
+Add:
+
+* early stopping
+* model checkpoint saving
+
+---
+
+# 🔹 STEP 8: EVALUATION
+
+Output:
+
+* confusion matrix
+* classification report
+* accuracy
+
+Also print:
+
+* false positives (important for hygiene)
+
+---
+
+# 🔹 STEP 9: HARD NEGATIVE TRAINING
+
+Add special dataset:
+
+* clean kitchens with messy walls
+* cluttered but hygienic setups
+
+This prevents model from being biased.
+
+---
+
+# 🔹 STEP 10: EXPORT MODEL
+
+Save:
+
+* model.h5 or .pt
+* preprocessing pipeline
+
+---
+
+# 🔹 STEP 11: INFERENCE FUNCTION
+
+Create function:
+
+predict(image):
+→ returns:
+- score (0–1)
+- label (clean/moderate/unsafe)
+
+---
+
+# 🔹 STEP 12: BONUS (IMPORTANT)
+
+Explain:
+
+* how to improve accuracy over time using real user data
+* how to retrain model periodically
+* how to avoid overfitting
+
+---
+
+# 🔹 OUTPUT FORMAT
+
+1. Dataset pipeline
+2. Scraping scripts
+3. Training code
+4. Evaluation code
+5. Inference function
+6. Improvement strategy
+
+---
+
+Goal:
+Model should work reliably in real Indian kitchen conditions and ignore irrelevant background.
+You are working on the TinyTrails project.
+
+The goal is to integrate an existing **AI Hygiene Model** (located inside the `hygiene` folder) into the application and use it as a **vendor verification and access control system**.
+
+⚠️ IMPORTANT:
+
+* Do NOT modify unrelated files
+* Focus only on AI integration, backend logic, and API flow
+* Assume the model is already trained and available for inference
+
+---
+
+# 🔹 SYSTEM OVERVIEW
+
+We are building a **Hygiene Verification Pipeline**:
+
+### Vendor Flow:
+
+1. New vendor registers
+2. If vendor category = FOOD:
+   → Must upload 2–3 images of workspace
+3. AI model evaluates cleanliness
+4. If score is acceptable → vendor approved
+5. Store:
+
+   * hygieneScore
+   * feature embedding (if possible)
+   * reference images
+
+---
+
+### Daily Login Flow:
+
+1. Vendor logs in
+2. App forces camera capture
+3. AI evaluates new image
+4. Compare:
+
+   * hygiene score threshold
+   * similarity with original setup
+5. If valid → allow access
+6. Else → block access with message
+
+---
+
+# 🔹 STEP 1: MODEL WRAPPER (PYTHON SERVICE)
+
+If the hygiene model is Python-based:
+
+Create:
+`hygiene_service/app.py`
+
+This should:
+
+* Load the trained model
+* Expose REST API using FastAPI or Flask
+
+Endpoints:
+
+### POST /predict
+
+Input:
+
+* image file
+
+Output:
+
+```
+{
+  "score": 0.92,
+  "label": "clean",
+  "confidence": 0.95,
+  "embedding": [array of floats]
+}
+```
+
+### POST /compare
+
+Input:
+
+* new image
+* reference embedding
+
+Output:
+
+```
+{
+  "similarity": 0.87,
+  "isSimilar": true
+}
+```
+
+⚠️ If embedding is not available:
+
+* Use cosine similarity on extracted features
+* OR fallback: compare score difference within threshold
+
+---
+
+# 🔹 STEP 2: BACKEND INTEGRATION
+
+In backend (Node or Spring Boot):
+
+Create:
+`HygieneService`
+
+Responsibilities:
+
+* Send image to Python service
+* Receive score + embedding
+* Store in database
+
+---
+
+# 🔹 STEP 3: DATABASE UPDATE
+
+Update `vendors` collection:
+
+```
+{
+  hygieneScore: number,
+  hygieneApproved: boolean,
+  referenceImages: [string],
+  referenceEmbedding: [number],
+  lastCheckScore: number,
+  lastCheckedAt: timestamp
+}
+```
+
+---
+
+# 🔹 STEP 4: REGISTRATION FLOW (FOOD VENDORS ONLY)
+
+Modify:
+`POST /api/vendor/create`
+
+Logic:
+
+IF category == "food":
+
+1. Accept multiple images
+2. Send each to hygiene model
+3. Average score
+4. IF score > threshold (e.g. 0.75):
+
+   * approve vendor
+   * store embedding from best image
+5. ELSE:
+
+   * reject vendor
+   * return message "Workspace not clean enough"
+
+---
+
+# 🔹 STEP 5: LOGIN HYGIENE CHECK
+
+Create endpoint:
+
+POST /api/vendor/hygiene-check
+
+Flow:
+
+1. Capture image from frontend
+2. Send to hygiene model
+3. Compare with stored embedding
+
+Conditions:
+
+ALLOW IF:
+
+* score > 0.7
+* similarity > 0.6
+
+ELSE:
+
+* deny access
+* return reason
+
+---
+
+# 🔹 STEP 6: FRONTEND INTEGRATION
+
+### Vendor Signup
+
+* Add image upload (multiple)
+* Show loading + "Analyzing cleanliness..."
+
+### Vendor Login
+
+* Open camera automatically
+* Capture image
+* Call `/api/vendor/hygiene-check`
+* If success → dashboard
+* Else → show error screen
+
+---
+
+# 🔹 STEP 7: ERROR HANDLING
+
+Cases:
+
+* Poor lighting → "Retake photo in better lighting"
+* Blurry image → reject
+* No utensils detected → reject
+
+---
+
+# 🔹 STEP 8: PERFORMANCE
+
+* Compress images before sending
+* Limit size < 1MB
+* Use async processing
+
+---
+
+# 🔹 STEP 9: SECURITY
+
+* Only vendors can access hygiene endpoints
+* Store embeddings securely
+* Prevent spoofing (basic check: image metadata or repeated frames)
+
+---
+
+# 🔹 STEP 10: OUTPUT
+
+Provide:
+
+1. Python service code (FastAPI/Flask)
+2. Backend service code
+3. API endpoints
+4. Frontend integration snippets
+5. Example request/response
+
+---
+
+Goal:
+After implementation, vendor should ONLY be able to access the app IF hygiene is verified at login.
+
+This is a core feature. Treat it as production-level logic.

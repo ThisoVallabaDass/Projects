@@ -1,0 +1,58 @@
+========================================================================
+                 TINYTRAIL AI HYGIENE SERVICE - INSTRUCTIONS
+========================================================================
+
+TinyTrail is a Hyperlocal AI Concierge and Computer Vision system optimized 
+for hygiene auditing of Indian kitchens and street food vendors. It compares 
+daily workspace photos against stored "clean reference" baselines.
+
+------------------------------------------------------------------------
+1. ENDPOINT WORKFLOW & ROUTING
+------------------------------------------------------------------------
+The FastAPI service runs on port 9000:
+
+*   POST /train-baseline:
+    - Accepts 5 clean reference images during vendor onboarding.
+    - Saves images in isolated folders: /vendor_baselines/{vendor_id}/.
+    
+*   POST /verify-daily:
+    - Analyzes a daily shift photo against the vendor's baselines.
+    - Uses SSIM (Structural Similarity Index) for difference analysis.
+    - Uses OpenCV contour mapping to identify and return dirty spots.
+    - Returns a final hygiene score, pass/fail result, and bounding boxes.
+
+*   GET /vendor/{vendor_id}/baselines:
+    - Returns onboarding baseline metadata (timestamps, file counts).
+
+*   GET /health:
+    - Returns service status and verifies if the PyTorch models are loaded.
+
+------------------------------------------------------------------------
+2. SYSTEM MODIFICATIONS COMPLETED
+------------------------------------------------------------------------
+To make the project work perfectly and run error-free, the following 
+enhancements were implemented:
+
+*   PyTorch 2.6+ Model Compatibility Fix:
+    - Newer versions of PyTorch default to strict loading (weights_only=True), 
+      which crashes when parsing legacy custom numpy/metadata objects in 
+      hygiene model checkpoints.
+    - Patched torch.load calls in workspace_inference.py, predict.py, 
+      evaluate.py, and quick_eval.py to set weights_only=False, restoring 
+      full unpickling capability.
+
+*   FastAPI Multipart Image Validation Fix:
+    - Enhanced validation inside app_enhanced.py. If a client's HTTP library 
+      omits MIME headers (sending application/octet-stream), the server now 
+      gracefully checks file extensions (.jpg, .jpeg, .png, .webp) as a 
+      fallback, preventing validation rejection.
+
+*   Test Suite Payload Correction:
+    - Updated test_api.py file uploads to explicitly pass 'image/jpeg' headers 
+      and corrected resource cleanup handles (closing inner file objects 
+      instead of tuples) to pass all 4 API tests.
+
+*   Monorepo Git Exclusions:
+    - Created a root-level .gitignore to exclude bulky ZIP backups (model.zip, 
+      tiny-trail-frontend.zip, java.zip) and local workspace caches (node_modules, 
+      python .venv), avoiding GitHub's 100MB file push limit.

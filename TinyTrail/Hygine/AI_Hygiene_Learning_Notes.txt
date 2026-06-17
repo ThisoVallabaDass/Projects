@@ -1,0 +1,361 @@
+AI HYGIENE DETECTION SYSTEM - COMPLETE LEARNING NOTES
+Project path: T:\College\Project\Hygine
+
+==================================================
+0) WHAT YOU ARE BUILDING
+==================================================
+You are building an image classification system for kitchen hygiene with 3 labels:
+1. meets_standard
+2. needs_work
+3. shouldnt_work
+
+This is a supervised learning problem in Computer Vision.
+Input: kitchen/food prep image
+Output: one of 3 classes
+
+Your final pipeline is:
+Dataset -> Clean -> Stats -> Train -> Save Model -> Predict on new image
+
+
+==================================================
+1) PROJECT STRUCTURE (WHAT EACH FILE DOES)
+==================================================
+Current important files:
+- train.py
+  Trains a CNN model on dataset folders and saves model checkpoint.
+
+- predict.py
+  Loads trained checkpoint + one test image and prints predicted class.
+
+- clean_dataset.py
+  Scans dataset for unreadable/corrupt images and removes them.
+
+- stats_dataset.py
+  Counts images per class and prints total.
+
+- scrape_images.py
+  Scrapes images with icrawler from internet and puts into class folders.
+
+- move_dataset.py
+  Existing utility file (not core in current pipeline).
+
+Dataset folders:
+- AI_Hygiene_Model/dataset/meets_standard
+- AI_Hygiene_Model/dataset/needs_work
+- AI_Hygiene_Model/dataset/shouldnt_work
+
+Model output path:
+- models/hygiene_model.pth
+
+
+==================================================
+2) CORE MACHINE LEARNING CONCEPTS YOU SHOULD LEARN
+==================================================
+2.1 Supervised learning
+- You provide images + correct labels (folder names are labels).
+- Model learns mapping from image patterns to class labels.
+
+2.2 Multi-class classification
+- 3 output neurons/logits (one per class).
+- Predicted class = index with highest score.
+
+2.3 Transfer learning
+- Use pretrained model (ResNet18/EfficientNet).
+- Pretrained weights learned generic visual features on ImageNet.
+- Replace final layer to your 3 classes.
+
+2.4 Data augmentation
+- Synthetic variety to improve generalization:
+  - RandomResizedCrop
+  - RandomHorizontalFlip
+  - RandomRotation
+  - ColorJitter
+- Helps model avoid overfitting to exact training images.
+
+2.5 Loss and optimization
+- CrossEntropyLoss for multi-class tasks.
+- Adam optimizer updates model weights via backprop.
+
+2.6 Device handling
+- Use GPU if available, else CPU.
+- Your run used CPU.
+
+
+==================================================
+3) HOW DATASET LOADING WORKS (ImageFolder)
+==================================================
+You use torchvision.datasets.ImageFolder.
+
+How it infers labels:
+- Each subfolder in dataset root is a class.
+- Folder names become class names.
+- Example mapping might be:
+  meets_standard -> 0
+  needs_work -> 1
+  shouldnt_work -> 2
+
+Important:
+- Keep only class folders directly under dataset root.
+- Avoid nested random folders unless intended.
+- Keep class names consistent; renaming folders changes label mapping.
+
+
+==================================================
+4) TRAIN.PY - LINE-BY-LINE LEARNING VIEW
+==================================================
+4.1 Path resolution
+- Script checks dataset path in order:
+  1) dataset/
+  2) AI_Hygiene_Model/dataset/
+- This is why your run worked with AI_Hygiene_Model/dataset.
+
+4.2 Transform pipeline (training)
+- RandomResizedCrop(224, scale=(0.7, 1.0))
+  -> random crop + resize to 224x224.
+- RandomHorizontalFlip(p=0.5)
+  -> mirror half of images.
+- RandomRotation(15)
+  -> random slight rotations.
+- ColorJitter(...)
+  -> random brightness/contrast/saturation/hue changes.
+- ToTensor()
+  -> converts image to tensor [C,H,W], scales pixels to [0,1].
+- Normalize(mean,std)
+  -> normalize channels using ImageNet stats.
+
+4.3 Build model
+- Default architecture: resnet18 pretrained.
+- Final fully connected layer replaced with:
+  nn.Linear(in_features, num_classes)
+- num_classes is inferred from dataset folders.
+
+4.4 Training loop
+For each epoch:
+- Iterate through batches from DataLoader.
+- Move images/labels to CPU/GPU device.
+- Forward pass: outputs = model(images)
+- Compute loss: criterion(outputs, labels)
+- Zero gradients: optimizer.zero_grad()
+- Backward pass: loss.backward()
+- Update weights: optimizer.step()
+- Track running loss and accuracy.
+
+4.5 Metrics printed
+- Epoch X/Y - Loss: ... - Acc: ...
+- Your final training accuracy reached ~91.67%.
+
+4.6 Save checkpoint
+Script saves dictionary with:
+- arch
+- model_state_dict
+- class_to_idx
+- idx_to_class
+- image_size
+
+Saved file:
+- models/hygiene_model.pth
+
+Why save class mappings?
+- So prediction script knows which class name corresponds to each index.
+
+
+==================================================
+5) BUG YOU HIT AND WHAT IT TAUGHT YOU
+==================================================
+Error seen:
+- AttributeError: 'DataLoader' object has no attribute 'set_postfix'
+
+Root cause:
+- tqdm fallback returned plain iterator without set_postfix.
+
+Fix:
+- Guarded with:
+  if hasattr(progress, "set_postfix"):
+      progress.set_postfix(...)
+
+Learning:
+- Always write robust fallback code when optional dependencies may be missing.
+
+
+==================================================
+6) CLEAN_DATASET.PY - HOW CORRUPT IMAGE REMOVAL WORKS
+==================================================
+Steps:
+1. Resolve dataset directory.
+2. Iterate each class folder.
+3. For each image extension (.jpg/.jpeg/.png/.bmp/.webp):
+   - Open with PIL and call img.verify()
+   - Re-open and convert("RGB")
+4. If any step fails, image is considered corrupt/unreadable.
+5. Remove file and increment removed counter.
+6. Print total removed.
+
+Why this matters:
+- Corrupt files can crash training or silently reduce dataset quality.
+
+
+==================================================
+7) STATS_DATASET.PY - WHAT IT CHECKS
+==================================================
+Steps:
+1. Resolve dataset directory.
+2. For each class folder, recursively count valid image extensions.
+3. Print summary per class + total.
+
+Why this matters:
+- Detect class imbalance.
+- Confirm data ingestion after scraping/cleaning.
+
+
+==================================================
+8) PREDICT.PY - HOW INFERENCE WORKS
+==================================================
+Steps:
+1. Load checkpoint from models/hygiene_model.pth.
+2. Read arch + class mapping from checkpoint.
+3. Rebuild same network architecture.
+4. Load learned weights.
+5. Preprocess input image:
+   - Resize(256)
+   - CenterCrop(image_size)
+   - ToTensor()
+   - Normalize(...)
+6. Add batch dimension with unsqueeze(0).
+7. Run forward pass under torch.no_grad().
+8. Get argmax index and map to class name.
+9. Print:
+   Prediction: <class_name>
+
+
+==================================================
+9) WHY TRAINING ACCURACY IS NOT ENOUGH
+==================================================
+Your current script reports only training metrics.
+This can overestimate real performance.
+
+You should learn next:
+- Train/validation split
+- Validation accuracy and loss
+- Confusion matrix
+- Per-class precision/recall/F1
+
+Reason:
+- In hygiene classification, class-specific errors matter.
+- Example risk: predicting shouldnt_work as meets_standard is high risk.
+
+
+==================================================
+10) WHAT TO LEARN NEXT (PRIORITY ROADMAP)
+==================================================
+Level 1 (must know now):
+- Tensors basics (shape, batch, channels)
+- DataLoader + batch training
+- CrossEntropyLoss and logits
+- Transfer learning and replacing classifier head
+- Overfitting vs generalization
+
+Level 2 (project quality):
+- Validation split and early stopping
+- Class imbalance handling (weighted loss, sampler)
+- Learning rate scheduling
+- Model checkpointing best epoch
+
+Level 3 (deployment readiness):
+- Calibration and confidence thresholds
+- ONNX or TorchScript export
+- Inference speed benchmarking
+- Dataset versioning and reproducibility
+
+
+==================================================
+11) DATA QUALITY RULES FOR THIS PROJECT
+==================================================
+1. Label quality first.
+   Wrong labels hurt more than fewer images.
+
+2. Keep class definitions strict:
+- meets_standard: clean, compliant, safe practices.
+- needs_work: moderate issues but salvageable.
+- shouldnt_work: severe contamination/unsafe conditions.
+
+3. Avoid near-duplicate spam from scraping.
+- Too many near-duplicates cause overfitting.
+
+4. Remove non-kitchen or irrelevant images.
+
+5. Keep balanced class counts as much as possible.
+
+
+==================================================
+12) COMMANDS YOU SHOULD PRACTICE
+==================================================
+Clean dataset:
+python clean_dataset.py
+
+Check counts:
+python stats_dataset.py
+
+Train model (default):
+python train.py
+
+Train with custom options:
+python train.py --epochs 20 --batch-size 16 --arch efficientnet_b0 --lr 0.0005
+
+Predict one image:
+python predict.py "T:\path\to\test.jpg" --model-path models\hygiene_model.pth
+
+
+==================================================
+13) INTERPRETING YOUR LAST TRAINING RUN
+==================================================
+Observed:
+- Epoch 1: loss 0.8926, acc 68.63%
+- Epoch 10: loss 0.2353, acc 91.67%
+
+Meaning:
+- Model is learning meaningful visual features.
+- Loss decreased overall and accuracy increased.
+- Some fluctuation between epochs is normal with augmentation and small data.
+
+Caution:
+- Without validation, cannot confirm real-world performance.
+
+
+==================================================
+14) COMMON MISTAKES TO AVOID
+==================================================
+- Training and prediction transforms mismatch.
+- Changing folder names after training (label mapping mismatch).
+- Saving only state_dict without class mapping.
+- Assuming high train accuracy means deployment-ready model.
+- Ignoring edge cases (dark lighting, blur, partial views, occlusion).
+
+
+==================================================
+15) RECOMMENDED NEXT UPGRADE FOR YOUR CODEBASE
+==================================================
+1. Add train/val split in train.py.
+2. Save best checkpoint based on validation accuracy.
+3. Add evaluation script:
+   - confusion matrix
+   - classification report
+4. Add README with exact run order.
+5. Add requirements.txt for environment setup.
+
+
+==================================================
+16) BIG PICTURE UNDERSTANDING
+==================================================
+What is happening end-to-end:
+- You collect labeled images.
+- You clean and count them.
+- You train a pretrained CNN adapted to 3 hygiene classes.
+- Model parameters are optimized to minimize classification error.
+- You save trained parameters and label mapping.
+- At inference time, same preprocessing + model predicts hygiene category.
+
+This is a standard production pattern for many CV classifiers.
+Your project already has the working backbone, and now the main learning path is model evaluation, data quality, and deployment robustness.
+
+
+END OF NOTES
