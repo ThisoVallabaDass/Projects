@@ -1,0 +1,45 @@
+========================================================================
+             VIRTUAL MOUSE & VOICE ASSISTANT INSTRUCTIONS
+========================================================================
+
+------------------------------------------------------------------------
+1. GESTURE TO ACTION DICTIONARY
+------------------------------------------------------------------------
+* ✊ FIST (All fingers folded): 
+  - Action: Left Mouse Button Pressed Down (Drag Start).
+  - Use case: Use this to drag folders, files, or select text.
+  
+* ✋ PALM (All fingers extended): 
+  - Action: Left Mouse Button Released (Drag End / Mouse Up).
+  - Use case: Releases a dragged item or stops clicking.
+  
+* ☝️ INDEX FINGER (Only index finger extended): 
+  - Action: Single Left Click.
+  - Use case: Click buttons, links, or select items. Only clicks ONCE per gesture transition.
+  
+* ✌️ V SIGN (Index and middle fingers extended): 
+  - Action: Scroll Down.
+  - Use case: Scroll down on web pages or documents.
+
+------------------------------------------------------------------------
+2. CODE & ALGORITHM CHANGES COMPLETED
+------------------------------------------------------------------------
+* Thread-Safe Coordination (OpenCV on Main Thread):
+  Fixed OpenCV GUI window crashes by ensuring camera frame rendering (cv2.imshow) runs 
+  strictly on the main thread, while voice processing runs on a background daemon thread.
+
+* Latency & Lag Fixes:
+  Disabled PyAutoGUI's safety pause delay (pyautogui.PAUSE = 0) to allow instant, 
+  highly-responsive cursor movement at raw frame rate.
+
+* Hand-Agnostic Thumb Tracking:
+  Added self-calibrating orientation calculations comparing metacarpal joints, allowing 
+  stable thumb detection regardless of left-handed or right-handed use.
+
+* Bounding Box Workspace Interpolation:
+  Configured an active tracking box in config.json. This scales coordinate tracking to the 
+  center of your webcam screen, so you don't have to move your arm across the entire camera view.
+
+* Stateful Click-Lock & Safety Releases:
+  Added a click lock to prevent runaway clicking when holding a gesture. Added automatic mouse 
+  releases if your hand leaves the frame or changes shape.
