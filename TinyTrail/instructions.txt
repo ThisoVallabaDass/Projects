@@ -9,50 +9,51 @@ daily workspace photos against stored "clean reference" baselines.
 ------------------------------------------------------------------------
 1. ENDPOINT WORKFLOW & ROUTING
 ------------------------------------------------------------------------
-The FastAPI service runs on port 9000:
+The FastAPI service runs on port 8000:
+
+*   POST /verify-hygiene:
+    - Performs basic single-image classification for general cleanliness.
+    - Used to quickly check a workspace and returns pass/fail and a confidence score.
 
 *   POST /train-baseline:
     - Accepts 5 clean reference images during vendor onboarding.
-    - Saves images in isolated folders: /vendor_baselines/{vendor_id}/.
+    - Supports both 'baseline_images' (standard) and 'images' (Flutter client) fields.
+    - Saves images in isolated folders: /backend/vendor_baselines/{vendor_id}/.
     
 *   POST /verify-daily:
     - Analyzes a daily shift photo against the vendor's baselines.
+    - Supports both 'daily_image' (standard) and 'image' (Flutter client) fields.
     - Uses SSIM (Structural Similarity Index) for difference analysis.
     - Uses OpenCV contour mapping to identify and return dirty spots.
     - Returns a final hygiene score, pass/fail result, and bounding boxes.
 
+*   GET /vendors/{vendor_id}/baseline-status:
+    - Returns baseline training status matching Flutter expectations:
+      { "has_baseline": true/false, "vendor_id": "...", "status": "success/not_found" }
+
 *   GET /vendor/{vendor_id}/baselines:
-    - Returns onboarding baseline metadata (timestamps, file counts).
+    - Returns onboarding baseline metadata (timestamps, files list).
 
 *   GET /health:
     - Returns service status and verifies if the PyTorch models are loaded.
 
 ------------------------------------------------------------------------
-2. SYSTEM MODIFICATIONS COMPLETED
+2. REFACTORING & COMPATIBILITY IMPLEMENTED
 ------------------------------------------------------------------------
-To make the project work perfectly and run error-free, the following 
-enhancements were implemented:
+To clean up and unify the codebase:
 
-*   PyTorch 2.6+ Model Compatibility Fix:
-    - Newer versions of PyTorch default to strict loading (weights_only=True), 
-      which crashes when parsing legacy custom numpy/metadata objects in 
-      hygiene model checkpoints.
-    - Patched torch.load calls in workspace_inference.py, predict.py, 
-      evaluate.py, and quick_eval.py to set weights_only=False, restoring 
-      full unpickling capability.
+*   Dynamic Path Configuration:
+    - Updated app_enhanced.py to load its models (hygiene_model_indian_kitchen.pth) 
+      and store baseline databases relative to its own script directory, removing 
+      hardcoded absolute drive paths.
 
-*   FastAPI Multipart Image Validation Fix:
-    - Enhanced validation inside app_enhanced.py. If a client's HTTP library 
-      omits MIME headers (sending application/octet-stream), the server now 
-      gracefully checks file extensions (.jpg, .jpeg, .png, .webp) as a 
-      fallback, preventing validation rejection.
+*   Flutter Integration Compatibility:
+    - Mapped parameters: Allowed backend endpoints to accept both baseline_images/images 
+      and daily_image/image fields so that the mobile app communicates successfully.
+    - Endpoint Aliasing: Added the `/verify-hygiene` and `/vendors/{id}/baseline-status` 
+      endpoints matching the routes expected by hygiene_api_service.dart.
 
-*   Test Suite Payload Correction:
-    - Updated test_api.py file uploads to explicitly pass 'image/jpeg' headers 
-      and corrected resource cleanup handles (closing inner file objects 
-      instead of tuples) to pass all 4 API tests.
-
-*   Monorepo Git Exclusions:
-    - Created a root-level .gitignore to exclude bulky ZIP backups (model.zip, 
-      tiny-trail-frontend.zip, java.zip) and local workspace caches (node_modules, 
-      python .venv), avoiding GitHub's 100MB file push limit.
+*   Clean Monorepo Layout:
+    - Consolidated files under backend/ (API + weights) and tinytrails_mvp/ (Flutter application).
+    - Removed redundant duplicates like the React Native mobile code and the Spring Boot 
+      backend, making the repository small and organized.

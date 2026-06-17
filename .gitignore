@@ -26,25 +26,9 @@ node_modules/
 npm-debug.log*
 
 # TinyTrail specific ignores
-TinyTrail/model.zip
-TinyTrail/tiny-trail-frontend.zip
-TinyTrail/model/mobile/java.zip
-TinyTrail/.claude/
-TinyTrail/baseline_training.log
-TinyTrail/Hygine/.venv/
-TinyTrail/Hygine/__pycache__/
-TinyTrail/Hygine/hygiene_training.log
-TinyTrail/Hygine/overnight_pipeline.log
-TinyTrail/Hygine/runs/
-TinyTrail/Hygine/yolo_dataset/
-TinyTrail/vendor_baselines/
-TinyTrail/dataset_baseline_training/
-TinyTrail/test_images/
-TinyTrail/flutter_application_1/build/
-TinyTrail/flutter_application_1/.dart_tool/
-TinyTrail/flutter_application_1/.flutter-plugins*
-TinyTrail/flutter_application_1/ios/
-TinyTrail/flutter_application_1/android/
+TinyTrail/backend/.venv/
+TinyTrail/backend/vendor_baselines/
+TinyTrail/backend/__pycache__/
 TinyTrail/tinytrails_mvp/build/
 TinyTrail/tinytrails_mvp/.dart_tool/
 TinyTrail/tinytrails_mvp/.flutter-plugins*

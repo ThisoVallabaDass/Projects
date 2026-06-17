@@ -2,7 +2,7 @@
 
 An advanced Computer Vision and multi-service platform designed to automate and enforce food hygiene standards for street vendors, home kitchens, and small hotel prep areas in India.
 
-By matching daily workspace photos against a set of 5 clean "onboarding baselines," the system performs real-time anomaly detection, localizes dirty regions, and outputs visual feedback using bounding boxes.
+By matching daily workspace photos against a set of 5 clean "onboarding baselines," the system performs real-time anomaly detection, localizes dirty regions, and outputs visual feedback using bounding boxes overlayed directly on the mobile screen.
 
 ---
 
@@ -10,8 +10,8 @@ By matching daily workspace photos against a set of 5 clean "onboarding baseline
 
 *   **🔍 AI-Powered Hygiene Auditing**: Replaces mock checks with an active PyTorch image classification model optimized for Indian kitchen settings.
 *   **🖼️ Anomaly Bounding Box Detection**: Uses SSIM (Structural Similarity Index) and OpenCV contour detection to dynamically find and return exact coordinate rectangles `[x, y, w, h]` for anomalies (spills, clutter, trash).
-*   **🤝 Multi-Vendor Baseline Isolation**: Secure storage architecture isolates baseline reference images and metadata per vendor ID.
-*   **📱 Expo Mobile Integration**: Complete React Native mobile front-end (under `model/mobile`) configured to capture kitchen photos and render bounding box warnings over dirty workspace zones.
+*   **🤝 Multi-Vendor Baseline Isolation**: Secure storage architecture isolates baseline reference images and metadata per vendor ID inside the backend.
+*   **📱 Flutter Mobile Integration**: Sleek, glassmorphism-designed Flutter application (under `tinytrails_mvp/`) configured to capture kitchen photos and render red bounding box overlays over dirty workspace zones.
 *   **🧬 Safe PyTorch Loading**: Fully compatible with PyTorch 2.6+ unpickling changes (strict loading resolved safely).
 
 ---
@@ -20,21 +20,17 @@ By matching daily workspace photos against a set of 5 clean "onboarding baseline
 
 ```mermaid
 graph TD
-    subgraph Mobile Client [React Native Mobile App]
-        M[Expo Mobile App] -->|1. Uploads 5 Baselines| AP[FastAPI Backend]
+    subgraph Mobile Client [Flutter Mobile App]
+        M[tinytrails_mvp/ Flutter App] -->|1. Uploads 5 Baselines| AP[FastAPI Backend]
         M -->|2. Uploads Daily Photo| AP
-        M -->|3. Fetches Menu & Stories| DB[Node/Express Backend]
+        M -->|3. Checks Onboarding Status| AP
     end
 
-    subgraph AI Service [FastAPI Service - Port 9000]
-        AP -->|Classifies| Cls[PyTorch ResNet Classifier]
-        AP -->|Diff Analysis| SSIM[SSIM Comparison]
+    subgraph AI Service [FastAPI Service - Port 8000]
+        AP -->|Classifies /verify-hygiene| Cls[PyTorch ResNet Classifier]
+        AP -->|Diff Analysis /verify-daily| SSIM[SSIM Comparison]
         SSIM -->|Localizes Spills| OpenCV[OpenCV Contour Detector]
         OpenCV -->|Returns Bounding Boxes| Output[Hygiene Score & Rectangles]
-    end
-
-    subgraph Data Layer [SQLite Database]
-        DB -->|Stores Profile & Orders| SQLite[(tinytrail.db)]
     end
 ```
 
@@ -43,51 +39,39 @@ graph TD
 ## 🛠️ Tech Stack
 
 *   **AI Backend**: FastAPI, PyTorch, OpenCV, Scikit-Image, Uvicorn
-*   **Data Backend**: Node.js, Express, SQLite (Firebase Auth ready)
-*   **Mobile App**: React Native, Expo, TypeScript
-*   **Web Client**: React.js, TypeScript
+*   **Mobile App**: Flutter, Dart, Firebase (Auth & Profile storage)
 
 ---
 
 ## 🚀 Quick Start (Local Setup)
 
-For full details, see the beginner-friendly [what_to_do.txt](file:///E:/2026/GIT%20PULL/Projects/TinyTrail/what_to_do.txt).
+For step-by-step setup details, see the [what_to_do.txt](file:///E:/2026/GIT%20PULL/Projects/TinyTrail/what_to_do.txt) guide.
 
 ### 1. Launch FastAPI Hygiene Service
 ```bash
 # Activate virtual environment
-Hygine\.venv\Scripts\activate
+backend\.venv\Scripts\activate
 
 # Navigate and run app
-cd hygiene_service
+cd backend
 python app_enhanced.py
 ```
-*Runs on port 9000.*
+*Runs on port 8000.*
 
 ### 2. Verify AI Health
 In another terminal, run the validation script:
 ```bash
+cd backend
 python test_api.py
 ```
 *(Confirms classification and image alignment works correctly).*
 
-### 3. Start DB Server
+### 3. Launch Flutter Client
 ```bash
-cd model/backend-simple
-npm install
-# Set virtual environment path and run
-$env:PYTHON_BIN='../../Hygine/.venv/Scripts/python.exe'
-node server-v2.js
+cd tinytrails_mvp
+flutter pub get
+flutter run
 ```
-*Runs on port 8080.*
-
-### 4. Start Expo Mobile Client
-```bash
-cd model/mobile
-npm install
-npx expo start
-```
-*Scan the QR code in Expo Go to test on your mobile device.*
 
 ---
 
@@ -95,17 +79,15 @@ npx expo start
 
 ```
 TinyTrail/
-├── hygiene_service/       # FastAPI computer vision server
-│   └── app_enhanced.py    # Main API service with SSIM & contour box logic
-├── Hygine/                # PyTorch model code and training logs
-│   ├── models/            # Trained weights (16MB ResNet model)
-│   └── workspace_inference.py # Helper functions for Indian kitchen zones
-├── model/
-│   ├── backend-simple/    # Node.js server and local SQLite database
-│   └── mobile/            # React Native Expo app files
-├── test_images/           # Sample clean baselines and dirty daily pictures
-├── test_api.py            # API automated test suite
-├── instructions.txt       # System changes and routing guide
+├── backend/               # FastAPI computer vision server
+│   ├── weights/           # Trained models (hygiene_model_indian_kitchen.pth)
+│   ├── test_images/       # Sample clean baselines and daily pictures
+│   ├── app_enhanced.py    # Main API service with SSIM & contour box logic
+│   └── test_api.py        # API automated test suite
+├── tinytrails_mvp/        # Flutter mobile application
+│   ├── lib/               # Dart source files (screens, widgets, services)
+│   └── pubspec.yaml       # Flutter packages specification
+├── instructions.txt       # Unified API routing guide
 ├── what_to_do.txt         # Beginner running guide
 └── README.md              # Main project page
 ```

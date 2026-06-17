@@ -1,65 +1,51 @@
 ========================================================================
-                  BEGINNER SETUP & RUNNING GUIDE - TINYTRAIL
+             BEGINNER SETUP & RUNNING GUIDE - TINYTRAIL
 ========================================================================
 
-TinyTrail contains three main elements:
-1.  An AI Hygiene Python backend (app_enhanced.py)
-2.  A local Node.js database & server (server-v2.js)
-3.  A mobile React Native Expo app (model/mobile)
+TinyTrail consists of two primary components:
+1.  A Python AI Hygiene Backend (located in backend/)
+2.  A Flutter Mobile Application (located in tinytrails_mvp/)
 
-Follow these simple steps to run the complete environment on your computer:
+Follow these simple steps to set up and run both components:
 
 ------------------------------------------------------------------------
-STEP 1: ENVIRONMENT REQUIREMENT
+STEP 1: INSTALL REQUIRED SOFTWARE
 ------------------------------------------------------------------------
-Make sure you have:
-*   Python (version 3.12 or 3.13)
-*   Node.js (LTS version) installed from https://nodejs.org/
+1.  Python: Download and install Python 3.12 or 3.13 (https://www.python.org/)
+    *Make sure to check "Add Python to PATH" during installation.*
+2.  Flutter SDK: Download and install the Flutter SDK (https://docs.flutter.dev/get-started/install)
+    *Add Flutter to your system PATH environment variables.*
 
 ------------------------------------------------------------------------
 STEP 2: RUN THE PYTHON AI HYGIENE SERVICE
 ------------------------------------------------------------------------
-The project has a pre-configured Python virtual environment.
-1.  Open your command prompt in the project root.
-2.  Activate the virtual environment:
-        Hygine\.venv\Scripts\activate
-3.  Navigate to the hygiene_service directory:
-        cd hygiene_service
-4.  Start the service:
+1.  Open your terminal / command prompt.
+2.  Navigate to the TinyTrail directory:
+        cd "E:\2026\GIT PULL\Projects\TinyTrail"
+3.  Activate the pre-configured Python virtual environment:
+        backend\.venv\Scripts\activate
+4.  Navigate to the backend directory:
+        cd backend
+5.  Start the FastAPI backend:
         python app_enhanced.py
-    *(The service starts on port 9000: http://localhost:9000)*
+    *(The service starts on port 8000: http://localhost:8000)*
 
 ------------------------------------------------------------------------
-STEP 3: RUN THE API TEST SUITE
+STEP 3: RUN THE AUTOMATED API TESTS
 ------------------------------------------------------------------------
-While keeping the server running in Step 2, open a second command prompt, 
-activate the environment again, and run:
-    python test_api.py
-*(You should see "All 4 tests passed!" indicating the AI is working!)*
+While keeping the server running in Step 2, open a second terminal, 
+activate the environment, navigate to `backend/` and run:
+        python test_api.py
+*(You should see "All tests passed! Your API is working correctly.")*
 
 ------------------------------------------------------------------------
-STEP 4: RUN THE DATABASE BACKEND
+STEP 4: LAUNCH THE FLUTTER MOBILE APP
 ------------------------------------------------------------------------
-The Node.js server acts as the primary app database:
-1.  Open another command prompt and navigate to the backend folder:
-        cd model/backend-simple
-2.  Run:
-        npm install
-3.  Set the virtual environment path and run the server:
-        (On Windows PowerShell):
-        $env:PYTHON_BIN='../../Hygine/.venv/Scripts/python.exe'
-        node server-v2.js
-    *(The server starts on port 8080)*
-
-------------------------------------------------------------------------
-STEP 5: RUN THE MOBILE FRONTEND (EXPO)
-------------------------------------------------------------------------
-To run the Expo React Native app:
-1.  Open a new command prompt and navigate to the mobile folder:
-        cd model/mobile
-2.  Install packages:
-        npm install
-3.  Start Expo:
-        npx expo start
-4.  Scan the QR code on your phone using the Expo Go app (Android/iOS) 
-    connected to the same Wi-Fi network to test the interface.
+1.  Open a new terminal window.
+2.  Navigate to the tinytrails_mvp directory:
+        cd "E:\2026\GIT PULL\Projects\TinyTrail\tinytrails_mvp"
+3.  Retrieve Flutter dependencies:
+        flutter pub get
+4.  Connect an Android device, iOS device, or start an emulator.
+5.  Run the application:
+        flutter run
