@@ -1,0 +1,109 @@
+================================================================================
+  WHAT TO DO — KaarTech PPT Generator (Quick Start for Beginners)
+================================================================================
+
+  If you just cloned this repository, follow these steps to get started:
+
+
+STEP 1 — Install Python (if you don't have it)
+───────────────────────────────────────────────
+  Download Python 3.10+ from https://www.python.org/downloads/
+  During install, CHECK the box "Add Python to PATH"
+  Verify: open Command Prompt / PowerShell and type:
+      python --version
+
+
+STEP 2 — Install Python Dependencies
+─────────────────────────────────────
+  Open a terminal in the PPT_Generator folder and run:
+      pip install -r requirements.txt
+
+  This installs:
+    - python-pptx     → PowerPoint file manipulation
+    - google-generativeai → Gemini AI SDK
+    - python-dotenv   → loads .env files
+    - lxml            → XML processing
+    - Pillow          → Image handling
+    - requests        → HTTP requests
+
+
+STEP 3 — Set Up Your Gemini API Key
+────────────────────────────────────
+  1. Go to https://aistudio.google.com/apikey
+  2. Create a free API key
+  3. Copy the file ".env.example" to ".env":
+         copy .env.example .env
+  4. Open .env and replace "your_gemini_api_key_here" with your actual key:
+         GEMINI_API_KEY=AIzaSy...your_actual_key...
+
+  IMPORTANT: Never commit .env to Git — it contains your secret key!
+
+
+STEP 4 — Get the KaarTech Corporate Template
+─────────────────────────────────────────────
+  The generator requires the official KaarTech Corporate PPT Template.
+  
+  1. Create a folder called "reference" inside PPT_Generator:
+         mkdir reference
+  2. Place your template file there with this exact name:
+         reference/KaarTech Corporate PPT Templates - 2024 Guide (2).pptx
+
+  If you don't have the template, ask your team lead or check the
+  KaarTech internal portal for "Corporate PPT Templates 2024".
+
+
+STEP 5 — Generate Your First Presentation!
+──────────────────────────────────────────
+  Run this command:
+      python src/ppt_generator.py --topic "SAP BASIS Administration" --output "test.pptx"
+
+  Wait for Gemini to generate content (~10 seconds), then check:
+      output/test.pptx
+
+  Open it in PowerPoint or Google Slides to see your branded presentation!
+
+
+STEP 6 (Optional) — Set Up MCP Server for Claude Desktop
+─────────────────────────────────────────────────────────
+  If you use Claude Desktop and want to generate PPTs by chatting:
+
+  1. Install Node.js 18+ from https://nodejs.org/
+  2. Install MCP dependencies:
+         cd mcp
+         npm install
+  3. Edit your Claude Desktop config file:
+         %APPDATA%\Claude\claude_desktop_config.json
+     Add this entry under "mcpServers":
+         {
+           "kaartech-ppt": {
+             "command": "node",
+             "args": ["<full-path-to>/PPT_Generator/mcp/server.js"],
+             "env": {
+               "GEMINI_API_KEY": "your_key_here"
+             }
+           }
+         }
+  4. Restart Claude Desktop
+  5. Say: "Generate a PPT for SAP S/4HANA Migration"
+
+
+TROUBLESHOOTING
+───────────────
+  "GEMINI_API_KEY not found"
+    → Make sure your .env file exists and has the key set correctly
+
+  "Template not found"
+    → Place the KaarTech template in reference/ folder (see Step 4)
+
+  "ModuleNotFoundError"
+    → Run: pip install -r requirements.txt
+
+  "python not recognized"
+    → Make sure Python is installed and added to PATH
+
+  PowerPoint shows blank/broken slides
+    → The template file might be corrupted. Get a fresh copy.
+
+================================================================================
+  You're all set! Run "python src/ppt_generator.py" to start.
+================================================================================

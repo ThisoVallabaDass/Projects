@@ -1,0 +1,166 @@
+================================================================================
+  INSTRUCTIONS — KaarTech PPT Generator (Feature Reference)
+================================================================================
+
+
+1. GENERATE A NEW PRESENTATION (CLI)
+═════════════════════════════════════
+
+  The main script is: src/ppt_generator.py
+
+  A) From a topic (Gemini AI generates all content):
+     python src/ppt_generator.py --topic "SAP S/4HANA Migration Guide" --output "migration.pptx"
+
+  B) From a detailed prompt file:
+     python src/ppt_generator.py --prompt-file my_prompt.txt --output "custom.pptx"
+
+  C) From pre-generated JSON (skip Gemini, useful for tweaking):
+     python src/ppt_generator.py --json-file output/last_content.json --output "rebuilt.pptx"
+
+  D) Interactive mode (prompts you to type a topic):
+     python src/ppt_generator.py
+
+  Additional flags:
+     --context "extra context"     → extra info for Gemini
+     --debug                       → print placeholder names/sizes per slide
+     --api-key YOUR_KEY            → override .env API key
+     --template path/to/template   → use a different template file
+
+
+2. EDIT AN EXISTING PRESENTATION (CLI)
+═══════════════════════════════════════
+
+  The editor script is: src/ppt_editor.py
+
+  A) Inspect a .pptx (see all slides, shapes, and text):
+     python src/ppt_editor.py inspect --file output/my_presentation.pptx
+
+  B) Apply edits from a JSON file:
+     python src/ppt_editor.py edit --file output/my_ppt.pptx --edits edits.json --output "v2.pptx"
+
+  C) Interactive AI chat mode (describe changes in English):
+     python src/ppt_editor.py chat --file output/my_ppt.pptx --output "v2.pptx"
+
+  The original file is NEVER modified — a copy is saved to output/.
+
+
+3. EDIT OPERATIONS REFERENCE
+═════════════════════════════
+
+  When using the editor, pass a JSON array of operations.
+  Available operations:
+
+  TITLE — Change slide title
+    {"op":"title", "slide":1, "text":"New Title"}
+
+  SECTION — Change section divider text
+    {"op":"section", "slide":3, "text":"New Section Name"}
+
+  TEXT — Replace all text in a specific shape
+    {"op":"text", "slide":2, "shape":"Content Placeholder", "text":"New content here"}
+
+  REPLACE — Find/replace text on one slide
+    {"op":"replace", "slide":5, "find":"old text", "replace":"new text"}
+
+  REPLACE_ALL — Find/replace across ALL slides
+    {"op":"replace_all", "find":"07-06-2026", "replace":"12-06-2026"}
+
+  APPEND — Add a bullet/line to an existing shape
+    {"op":"append", "slide":4, "shape":"Content Placeholder", "text":"• New bullet point"}
+
+  ADD_SLIDE — Insert a new slide after a given position
+    {"op":"add_slide", "after":3, "layout":"Content Slide_3", "title":"New Slide", "body":"Content here"}
+
+  DELETE_SLIDE — Remove a slide (processed last to avoid index drift)
+    {"op":"delete_slide", "slide":7}
+
+  FONT_SLIDE — Change font for all text on one slide
+    {"op":"font_slide", "slide":2, "font":"Arial", "size":14, "bold":true, "color":"C0202B"}
+
+
+4. SLIDE TYPES FOR GENERATION
+══════════════════════════════
+
+  When generating content (via Gemini or JSON), use these slide types:
+
+    overview       → intro slide with overview_text + key_features + sap_module
+    content_single → single column text/bullets
+    content_two    → two parallel columns
+    content_three  → three columns
+    components     → named components with descriptions + SAP t-codes
+    process        → sequential steps (process_steps array, auto-picks arrow/flow/cycle)
+    dashboard      → monitoring metrics with dashboard_items
+    comparison     → side-by-side two options
+    timeline       → time-ordered steps (max 9)
+    cycle          → repeating circular process
+    pointer_4      → 4 key highlighted items
+    circle_4       → 4 connected concepts in circle
+    quote          → key stat or statement
+    table          → tabular data (table_headers + table_rows)
+
+
+5. TEMPLATE SLIDE INDEX REFERENCE
+═════════════════════════════════
+
+  The generator maps slide_type to these layout indices in the template:
+
+    Slide Type           Layout Index
+    ─────────────        ────────────
+    Cover (geometric)     0
+    Cover (dark navy)     1
+    Cover (full red)      8
+    Agenda (6 items)      30
+    Agenda (8 items)      31
+    Section Divider       20, 21, 22
+    Content Single        14
+    Content Two-Column    15
+    Content Three-Column  17
+    Comparison            16
+    Process Arrow (4)     106
+    Process Flow (5+)     135
+    Process Cycle         84
+    Timeline              59
+    Pointer (4 items)     96
+    Circle (4 items)      74
+    Quote                 45
+    Table                 116
+    Thank You             174, 169
+
+
+6. MCP SERVER (Claude Desktop Integration)
+═══════════════════════════════════════════
+
+  Once configured (see what_to_do.txt Step 6), these tools are available:
+
+    generate_ppt           → Gemini AI generates content + builds .pptx
+    generate_ppt_from_json → Build .pptx from pre-structured JSON
+    list_output_files      → List all generated .pptx files
+    get_content_schema     → Return the JSON schema for content
+    preview_slide_count    → Estimate slide count from JSON
+    inspect_pptx           → Show all slides/shapes in a .pptx
+    edit_pptx              → Apply edit operations to a .pptx
+
+
+7. BRAND COLORS (KaarTech)
+══════════════════════════
+
+    Primary Red:    #C0202B
+    Dark Navy:      #1A1A2E
+    White:          #FFFFFF
+    Body Gray:      #585858
+    Light BG:       #F5F5F5
+
+
+8. OUTPUT FILES
+═══════════════
+
+  All generated presentations go to: output/
+  Debug files saved automatically:
+    output/last_content.json   → JSON content from last Gemini call
+    output/last_prompt.txt     → prompt sent to Gemini
+
+  These debug files are useful for:
+    - Tweaking content without re-calling Gemini
+    - Rebuilding with --json-file flag
+
+================================================================================

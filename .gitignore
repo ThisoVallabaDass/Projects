@@ -34,3 +34,13 @@ TinyTrail/.dart_tool/
 TinyTrail/.flutter-plugins*
 TinyTrail/android/.gradle/
 TinyTrail/android/app/build/
+
+# PPT_Generator specific ignores
+PPT_Generator/.env
+PPT_Generator/output/
+PPT_Generator/reference/
+PPT_Generator/scratch/
+PPT_Generator/need to edited/
+PPT_Generator/src/__pycache__/
+PPT_Generator/mcp/node_modules/
+PPT_Generator/mcp/package-lock.json
