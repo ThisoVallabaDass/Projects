@@ -4,7 +4,7 @@
 
 TinyTrail consists of two primary components:
 1.  A Python AI Hygiene Backend (located in backend/)
-2.  A Flutter Mobile Application (located in tinytrails_mvp/)
+2.  A Flutter Mobile Application (located directly at the root level of TinyTrail/)
 
 Follow these simple steps to set up and run both components:
 
@@ -42,8 +42,8 @@ activate the environment, navigate to `backend/` and run:
 STEP 4: LAUNCH THE FLUTTER MOBILE APP
 ------------------------------------------------------------------------
 1.  Open a new terminal window.
-2.  Navigate to the tinytrails_mvp directory:
-        cd "E:\2026\GIT PULL\Projects\TinyTrail\tinytrails_mvp"
+2.  Navigate to the TinyTrail directory:
+        cd "E:\2026\GIT PULL\Projects\TinyTrail"
 3.  Retrieve Flutter dependencies:
         flutter pub get
 4.  Connect an Android device, iOS device, or start an emulator.

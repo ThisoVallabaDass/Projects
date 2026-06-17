@@ -54,6 +54,6 @@ To clean up and unify the codebase:
       endpoints matching the routes expected by hygiene_api_service.dart.
 
 *   Clean Monorepo Layout:
-    - Consolidated files under backend/ (API + weights) and tinytrails_mvp/ (Flutter application).
+    - Consolidated files directly under the TinyTrail root (Flutter application) and backend/ (API + weights).
     - Removed redundant duplicates like the React Native mobile code and the Spring Boot 
       backend, making the repository small and organized.

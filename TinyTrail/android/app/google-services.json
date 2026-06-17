@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "89922806233",
+    "project_id": "tiny-trail-f56ec",
+    "storage_bucket": "tiny-trail-f56ec.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89922806233:android:44cc5d22c82405414279c8",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk4k7Rt3eFoq7dSTdBd6MGRPLXK5eVXSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89922806233:android:2dfe5d20fba172814279c8",
+        "android_client_info": {
+          "package_name": "com.tinytrails.mvp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk4k7Rt3eFoq7dSTdBd6MGRPLXK5eVXSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

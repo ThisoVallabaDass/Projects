@@ -29,8 +29,8 @@ npm-debug.log*
 TinyTrail/backend/.venv/
 TinyTrail/backend/vendor_baselines/
 TinyTrail/backend/__pycache__/
-TinyTrail/tinytrails_mvp/build/
-TinyTrail/tinytrails_mvp/.dart_tool/
-TinyTrail/tinytrails_mvp/.flutter-plugins*
-TinyTrail/tinytrails_mvp/ios/
-TinyTrail/tinytrails_mvp/android/
+TinyTrail/build/
+TinyTrail/.dart_tool/
+TinyTrail/.flutter-plugins*
+TinyTrail/android/.gradle/
+TinyTrail/android/app/build/
