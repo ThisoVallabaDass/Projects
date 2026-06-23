@@ -1,0 +1,906 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Nila//YearZero//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-1@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260524T080000
+DTEND:20260524T090000
+SUMMARY:Anthropic Claude - Day 1: What is Anthropic Claude? - The Big Picture
+DESCRIPTION:You will understand what Anthropic Claude means\, why people use it\, and what you can build later.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-2@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260525T080000
+DTEND:20260525T090000
+SUMMARY:Anthropic Claude - Day 2: Setting up your Anthropic Claude learning environment and tools
+DESCRIPTION:You will understand setting up your anthropic claude learning environment and tools and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-3@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260526T080000
+DTEND:20260526T090000
+SUMMARY:Anthropic Claude - Day 3: Anthropic Claude: Key terms and mental models
+DESCRIPTION:You will understand anthropic claude: key terms and mental models and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-4@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260527T080000
+DTEND:20260527T090000
+SUMMARY:Anthropic Claude - Day 4: Anthropic Claude: Real-world use cases
+DESCRIPTION:You will understand anthropic claude: real-world use cases and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-5@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260528T080000
+DTEND:20260528T090000
+SUMMARY:Anthropic Claude - Day 5: Anthropic Claude: How the main workflow works
+DESCRIPTION:You will understand anthropic claude: how the main workflow works and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-6@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260529T080000
+DTEND:20260529T090000
+SUMMARY:Anthropic Claude - Day 6: Anthropic Claude: Common myths and mistakes
+DESCRIPTION:You will understand anthropic claude: common myths and mistakes and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-7@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260530T080000
+DTEND:20260530T090000
+SUMMARY:Anthropic Claude - Day 7: Anthropic Claude: Simple hands-on exploration
+DESCRIPTION:You will understand anthropic claude: simple hands-on exploration and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-8@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260531T080000
+DTEND:20260531T090000
+SUMMARY:Anthropic Claude - Day 8: Anthropic Claude core building blocks
+DESCRIPTION:You will understand anthropic claude core building blocks and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-9@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260601T080000
+DTEND:20260601T090000
+SUMMARY:Anthropic Claude - Day 9: Anthropic Claude basic workflow
+DESCRIPTION:You will understand anthropic claude basic workflow and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-10@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260602T080000
+DTEND:20260602T090000
+SUMMARY:Anthropic Claude - Day 10: Anthropic Claude hands-on exercise
+DESCRIPTION:You will understand anthropic claude hands-on exercise and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-11@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260603T080000
+DTEND:20260603T090000
+SUMMARY:Anthropic Claude - Day 11: Anthropic Claude guided mini project
+DESCRIPTION:You will understand anthropic claude guided mini project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-12@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260604T080000
+DTEND:20260604T090000
+SUMMARY:Anthropic Claude - Day 12: Anthropic Claude debugging and review
+DESCRIPTION:You will understand anthropic claude debugging and review and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-13@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260605T080000
+DTEND:20260605T090000
+SUMMARY:Anthropic Claude - Day 13: Anthropic Claude core building blocks
+DESCRIPTION:You will understand anthropic claude core building blocks and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-14@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260606T080000
+DTEND:20260606T090000
+SUMMARY:Anthropic Claude - Day 14: Anthropic Claude basic workflow
+DESCRIPTION:You will understand anthropic claude basic workflow and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-15@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260607T080000
+DTEND:20260607T090000
+SUMMARY:Anthropic Claude - Day 15: Anthropic Claude hands-on exercise
+DESCRIPTION:You will understand anthropic claude hands-on exercise and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-16@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260608T080000
+DTEND:20260608T090000
+SUMMARY:Anthropic Claude - Day 16: Anthropic Claude guided mini project
+DESCRIPTION:You will understand anthropic claude guided mini project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-17@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260609T080000
+DTEND:20260609T090000
+SUMMARY:Anthropic Claude - Day 17: Anthropic Claude debugging and review
+DESCRIPTION:You will understand anthropic claude debugging and review and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-18@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260610T080000
+DTEND:20260610T090000
+SUMMARY:Anthropic Claude - Day 18: Anthropic Claude core building blocks
+DESCRIPTION:You will understand anthropic claude core building blocks and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-19@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260611T080000
+DTEND:20260611T090000
+SUMMARY:Anthropic Claude - Day 19: Anthropic Claude basic workflow
+DESCRIPTION:You will understand anthropic claude basic workflow and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-20@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260612T080000
+DTEND:20260612T090000
+SUMMARY:Anthropic Claude - Day 20: Anthropic Claude hands-on exercise
+DESCRIPTION:You will understand anthropic claude hands-on exercise and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-21@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260613T080000
+DTEND:20260613T090000
+SUMMARY:Anthropic Claude - Day 21: Anthropic Claude guided mini project
+DESCRIPTION:You will understand anthropic claude guided mini project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-22@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260614T080000
+DTEND:20260614T090000
+SUMMARY:Anthropic Claude - Day 22: Anthropic Claude debugging and review
+DESCRIPTION:You will understand anthropic claude debugging and review and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-23@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260615T080000
+DTEND:20260615T090000
+SUMMARY:Anthropic Claude - Day 23: Anthropic Claude core building blocks
+DESCRIPTION:You will understand anthropic claude core building blocks and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-24@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260616T080000
+DTEND:20260616T090000
+SUMMARY:Anthropic Claude - Day 24: Anthropic Claude basic workflow
+DESCRIPTION:You will understand anthropic claude basic workflow and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-25@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260617T080000
+DTEND:20260617T090000
+SUMMARY:Anthropic Claude - Day 25: Anthropic Claude hands-on exercise
+DESCRIPTION:You will understand anthropic claude hands-on exercise and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-26@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260618T080000
+DTEND:20260618T090000
+SUMMARY:Anthropic Claude - Day 26: Anthropic Claude guided mini project
+DESCRIPTION:You will understand anthropic claude guided mini project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-27@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260619T080000
+DTEND:20260619T090000
+SUMMARY:Anthropic Claude - Day 27: Anthropic Claude debugging and review
+DESCRIPTION:You will understand anthropic claude debugging and review and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-28@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260620T080000
+DTEND:20260620T090000
+SUMMARY:Anthropic Claude - Day 28: Anthropic Claude core building blocks
+DESCRIPTION:You will understand anthropic claude core building blocks and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-29@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260621T080000
+DTEND:20260621T090000
+SUMMARY:Anthropic Claude - Day 29: Anthropic Claude basic workflow
+DESCRIPTION:You will understand anthropic claude basic workflow and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-30@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260622T080000
+DTEND:20260622T090000
+SUMMARY:Anthropic Claude - Day 30: Anthropic Claude hands-on exercise
+DESCRIPTION:You will understand anthropic claude hands-on exercise and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-31@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260623T080000
+DTEND:20260623T090000
+SUMMARY:Anthropic Claude - Day 31: Anthropic Claude intermediate project planning
+DESCRIPTION:You will understand anthropic claude intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-32@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260624T080000
+DTEND:20260624T090000
+SUMMARY:Anthropic Claude - Day 32: Anthropic Claude building a practical project
+DESCRIPTION:You will understand anthropic claude building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-33@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260625T080000
+DTEND:20260625T090000
+SUMMARY:Anthropic Claude - Day 33: Anthropic Claude evaluation and improvement
+DESCRIPTION:You will understand anthropic claude evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-34@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260626T080000
+DTEND:20260626T090000
+SUMMARY:Anthropic Claude - Day 34: Anthropic Claude tool usage
+DESCRIPTION:You will understand anthropic claude tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-35@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260627T080000
+DTEND:20260627T090000
+SUMMARY:Anthropic Claude - Day 35: Anthropic Claude case study
+DESCRIPTION:You will understand anthropic claude case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-36@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260628T080000
+DTEND:20260628T090000
+SUMMARY:Anthropic Claude - Day 36: Anthropic Claude intermediate project planning
+DESCRIPTION:You will understand anthropic claude intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-37@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260629T080000
+DTEND:20260629T090000
+SUMMARY:Anthropic Claude - Day 37: Anthropic Claude building a practical project
+DESCRIPTION:You will understand anthropic claude building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-38@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260630T080000
+DTEND:20260630T090000
+SUMMARY:Anthropic Claude - Day 38: Anthropic Claude evaluation and improvement
+DESCRIPTION:You will understand anthropic claude evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-39@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260701T080000
+DTEND:20260701T090000
+SUMMARY:Anthropic Claude - Day 39: Anthropic Claude tool usage
+DESCRIPTION:You will understand anthropic claude tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-40@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260702T080000
+DTEND:20260702T090000
+SUMMARY:Anthropic Claude - Day 40: Anthropic Claude case study
+DESCRIPTION:You will understand anthropic claude case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-41@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260703T080000
+DTEND:20260703T090000
+SUMMARY:Anthropic Claude - Day 41: Anthropic Claude intermediate project planning
+DESCRIPTION:You will understand anthropic claude intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-42@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260704T080000
+DTEND:20260704T090000
+SUMMARY:Anthropic Claude - Day 42: Anthropic Claude building a practical project
+DESCRIPTION:You will understand anthropic claude building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-43@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260705T080000
+DTEND:20260705T090000
+SUMMARY:Anthropic Claude - Day 43: Anthropic Claude evaluation and improvement
+DESCRIPTION:You will understand anthropic claude evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-44@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260706T080000
+DTEND:20260706T090000
+SUMMARY:Anthropic Claude - Day 44: Anthropic Claude tool usage
+DESCRIPTION:You will understand anthropic claude tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-45@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260707T080000
+DTEND:20260707T090000
+SUMMARY:Anthropic Claude - Day 45: Anthropic Claude case study
+DESCRIPTION:You will understand anthropic claude case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-46@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260708T080000
+DTEND:20260708T090000
+SUMMARY:Anthropic Claude - Day 46: Anthropic Claude intermediate project planning
+DESCRIPTION:You will understand anthropic claude intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-47@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260709T080000
+DTEND:20260709T090000
+SUMMARY:Anthropic Claude - Day 47: Anthropic Claude building a practical project
+DESCRIPTION:You will understand anthropic claude building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-48@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260710T080000
+DTEND:20260710T090000
+SUMMARY:Anthropic Claude - Day 48: Anthropic Claude evaluation and improvement
+DESCRIPTION:You will understand anthropic claude evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-49@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260711T080000
+DTEND:20260711T090000
+SUMMARY:Anthropic Claude - Day 49: Anthropic Claude tool usage
+DESCRIPTION:You will understand anthropic claude tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-50@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260712T080000
+DTEND:20260712T090000
+SUMMARY:Anthropic Claude - Day 50: Anthropic Claude case study
+DESCRIPTION:You will understand anthropic claude case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-51@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260713T080000
+DTEND:20260713T090000
+SUMMARY:Anthropic Claude - Day 51: Anthropic Claude intermediate project planning
+DESCRIPTION:You will understand anthropic claude intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-52@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260714T080000
+DTEND:20260714T090000
+SUMMARY:Anthropic Claude - Day 52: Anthropic Claude building a practical project
+DESCRIPTION:You will understand anthropic claude building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-53@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260715T080000
+DTEND:20260715T090000
+SUMMARY:Anthropic Claude - Day 53: Anthropic Claude evaluation and improvement
+DESCRIPTION:You will understand anthropic claude evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-54@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260716T080000
+DTEND:20260716T090000
+SUMMARY:Anthropic Claude - Day 54: Anthropic Claude tool usage
+DESCRIPTION:You will understand anthropic claude tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-55@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260717T080000
+DTEND:20260717T090000
+SUMMARY:Anthropic Claude - Day 55: Anthropic Claude case study
+DESCRIPTION:You will understand anthropic claude case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-56@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260718T080000
+DTEND:20260718T090000
+SUMMARY:Anthropic Claude - Day 56: Anthropic Claude intermediate project planning
+DESCRIPTION:You will understand anthropic claude intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-57@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260719T080000
+DTEND:20260719T090000
+SUMMARY:Anthropic Claude - Day 57: Anthropic Claude building a practical project
+DESCRIPTION:You will understand anthropic claude building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-58@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260720T080000
+DTEND:20260720T090000
+SUMMARY:Anthropic Claude - Day 58: Anthropic Claude evaluation and improvement
+DESCRIPTION:You will understand anthropic claude evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-59@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260721T080000
+DTEND:20260721T090000
+SUMMARY:Anthropic Claude - Day 59: Anthropic Claude tool usage
+DESCRIPTION:You will understand anthropic claude tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-60@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260722T080000
+DTEND:20260722T090000
+SUMMARY:Anthropic Claude - Day 60: Anthropic Claude case study
+DESCRIPTION:You will understand anthropic claude case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-61@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260723T080000
+DTEND:20260723T090000
+SUMMARY:Anthropic Claude - Day 61: Anthropic Claude advanced architecture
+DESCRIPTION:You will understand anthropic claude advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-62@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260724T080000
+DTEND:20260724T090000
+SUMMARY:Anthropic Claude - Day 62: Anthropic Claude real-world project
+DESCRIPTION:You will understand anthropic claude real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-63@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260725T080000
+DTEND:20260725T090000
+SUMMARY:Anthropic Claude - Day 63: Anthropic Claude deployment thinking
+DESCRIPTION:You will understand anthropic claude deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-64@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260726T080000
+DTEND:20260726T090000
+SUMMARY:Anthropic Claude - Day 64: Anthropic Claude best practices
+DESCRIPTION:You will understand anthropic claude best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-65@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260727T080000
+DTEND:20260727T090000
+SUMMARY:Anthropic Claude - Day 65: Anthropic Claude portfolio polish
+DESCRIPTION:You will understand anthropic claude portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-66@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260728T080000
+DTEND:20260728T090000
+SUMMARY:Anthropic Claude - Day 66: Anthropic Claude advanced architecture
+DESCRIPTION:You will understand anthropic claude advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-67@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260729T080000
+DTEND:20260729T090000
+SUMMARY:Anthropic Claude - Day 67: Anthropic Claude real-world project
+DESCRIPTION:You will understand anthropic claude real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-68@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260730T080000
+DTEND:20260730T090000
+SUMMARY:Anthropic Claude - Day 68: Anthropic Claude deployment thinking
+DESCRIPTION:You will understand anthropic claude deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-69@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260731T080000
+DTEND:20260731T090000
+SUMMARY:Anthropic Claude - Day 69: Anthropic Claude best practices
+DESCRIPTION:You will understand anthropic claude best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-70@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260801T080000
+DTEND:20260801T090000
+SUMMARY:Anthropic Claude - Day 70: Anthropic Claude portfolio polish
+DESCRIPTION:You will understand anthropic claude portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-71@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260802T080000
+DTEND:20260802T090000
+SUMMARY:Anthropic Claude - Day 71: Anthropic Claude advanced architecture
+DESCRIPTION:You will understand anthropic claude advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-72@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260803T080000
+DTEND:20260803T090000
+SUMMARY:Anthropic Claude - Day 72: Anthropic Claude real-world project
+DESCRIPTION:You will understand anthropic claude real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-73@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260804T080000
+DTEND:20260804T090000
+SUMMARY:Anthropic Claude - Day 73: Anthropic Claude deployment thinking
+DESCRIPTION:You will understand anthropic claude deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-74@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260805T080000
+DTEND:20260805T090000
+SUMMARY:Anthropic Claude - Day 74: Anthropic Claude best practices
+DESCRIPTION:You will understand anthropic claude best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-75@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260806T080000
+DTEND:20260806T090000
+SUMMARY:Anthropic Claude - Day 75: Anthropic Claude portfolio polish
+DESCRIPTION:You will understand anthropic claude portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-76@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260807T080000
+DTEND:20260807T090000
+SUMMARY:Anthropic Claude - Day 76: Anthropic Claude advanced architecture
+DESCRIPTION:You will understand anthropic claude advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-77@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260808T080000
+DTEND:20260808T090000
+SUMMARY:Anthropic Claude - Day 77: Anthropic Claude real-world project
+DESCRIPTION:You will understand anthropic claude real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-78@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260809T080000
+DTEND:20260809T090000
+SUMMARY:Anthropic Claude - Day 78: Anthropic Claude deployment thinking
+DESCRIPTION:You will understand anthropic claude deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-79@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260810T080000
+DTEND:20260810T090000
+SUMMARY:Anthropic Claude - Day 79: Anthropic Claude best practices
+DESCRIPTION:You will understand anthropic claude best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-80@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260811T080000
+DTEND:20260811T090000
+SUMMARY:Anthropic Claude - Day 80: Anthropic Claude portfolio polish
+DESCRIPTION:You will understand anthropic claude portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-81@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260812T080000
+DTEND:20260812T090000
+SUMMARY:Anthropic Claude - Day 81: Anthropic Claude advanced architecture
+DESCRIPTION:You will understand anthropic claude advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-82@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260813T080000
+DTEND:20260813T090000
+SUMMARY:Anthropic Claude - Day 82: Anthropic Claude real-world project
+DESCRIPTION:You will understand anthropic claude real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-83@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260814T080000
+DTEND:20260814T090000
+SUMMARY:Anthropic Claude - Day 83: Anthropic Claude deployment thinking
+DESCRIPTION:You will understand anthropic claude deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-84@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260815T080000
+DTEND:20260815T090000
+SUMMARY:Anthropic Claude - Day 84: Anthropic Claude best practices
+DESCRIPTION:You will understand anthropic claude best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-85@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260816T080000
+DTEND:20260816T090000
+SUMMARY:Anthropic Claude - Day 85: Anthropic Claude portfolio polish
+DESCRIPTION:You will understand anthropic claude portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-86@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260817T080000
+DTEND:20260817T090000
+SUMMARY:Anthropic Claude - Day 86: Anthropic Claude advanced architecture
+DESCRIPTION:You will understand anthropic claude advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-87@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260818T080000
+DTEND:20260818T090000
+SUMMARY:Anthropic Claude - Day 87: Anthropic Claude real-world project
+DESCRIPTION:You will understand anthropic claude real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-88@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260819T080000
+DTEND:20260819T090000
+SUMMARY:Anthropic Claude - Day 88: Anthropic Claude deployment thinking
+DESCRIPTION:You will understand anthropic claude deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-89@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260820T080000
+DTEND:20260820T090000
+SUMMARY:Anthropic Claude - Day 89: Anthropic Claude best practices
+DESCRIPTION:You will understand anthropic claude best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:anthropic_claude_2026_05_23-day-90@nila
+DTSTAMP:20260523T100721Z
+DTSTART:20260821T080000
+DTEND:20260821T090000
+SUMMARY:Anthropic Claude - Day 90: Anthropic Claude portfolio polish
+DESCRIPTION:You will understand anthropic claude portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

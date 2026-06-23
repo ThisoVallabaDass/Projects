@@ -1,0 +1,62 @@
+🌙 NILA YEARZERO — HOW TO RESTORE AND RUN THE PROJECT
+======================================================
+
+Follow these steps to set up and run Nila when pulling this code from GitHub onto any fresh system.
+
+1. PREREQUISITES
+----------------
+* Python: Make sure Python 3.10 or higher is installed and added to your system path.
+* Ollama: Download and install Ollama from https://ollama.com
+  - After installing, run it (ensure 'ollama serve' is running in the background).
+  - Open a terminal and download the required base model:
+    cmd: ollama pull llama3.1:8b
+
+2. ENVIRONMENT CONFIGURATION
+----------------------------
+* Create a file named '.env' in the project root directory (next to this file).
+* Copy the template from '.env.example' into '.env':
+  GOOGLE_API_KEY=your-gemini-api-key-here
+  OLLAMA_HOST=http://localhost:11434
+  OLLAMA_MODEL=llama3.1:8b
+* You must configure at least the GOOGLE_API_KEY. Get a free key at:
+  https://aistudio.google.com/app/apikey
+
+3. PYTHON DEPENDENCIES
+----------------------
+* It is recommended to use a virtual environment:
+  cmd: python -m venv venv
+  cmd: venv\Scripts\activate      (On Windows)
+  cmd: source venv/bin/activate  (On Linux/Mac)
+* Install all required Python packages:
+  cmd: pip install -r requirements.txt
+
+4. SETUP & CUSTOM MODEL COMPILE
+-------------------------------
+* Nila uses a custom Ollama model called 'nila' trained on your local profile/dataset.
+* Run the automatic setup script to build the training dataset and compile the model:
+  cmd: python setup.py
+* This script will:
+  - Install any missing python dependencies.
+  - Verify Ollama connection and pull necessary base models.
+  - Compile your training dataset into training/Modelfile.
+  - Register the custom 'nila' model inside Ollama.
+
+5. RUNNING THE INTERACTIVE CLI
+------------------------------
+* Once setup is complete, launch Nila in interactive mode:
+  cmd: python main.py
+* CLI Console Commands:
+  - 'voice'        - Switch to Continuous Speech/Wake word mode
+  - 'text-mode'    - Switch back to Text loop mode
+  - 'status'       - View multi-model council status and memory stats
+  - 'models'       - View status of local and online LLM endpoints
+  - 'memory'       - Show all persistent memories Nila has of you
+  - 'todo'         - See today's course tasks and lesson plans
+  - 'switch [mod]' - Force use of a specific model (auto, gemini, groq, openrouter, local)
+  - 'clear'        - Wipe conversation history (preserves goals & facts)
+  - 'quit'         - Close Nila safely
+
+6. RUNNING THE DESKTOP OVERLAY
+------------------------------
+* On Windows, you can double-click 'overlay/nila.bat' to start the floating transparent widget.
+* You can trigger it from anywhere using the configured shortcut key inside the widget.

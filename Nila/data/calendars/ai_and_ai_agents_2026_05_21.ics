@@ -1,0 +1,906 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thozhi//YearZero//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-1@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260522T080000
+DTEND:20260522T090000
+SUMMARY:AI and AI Agents - Day 1: What is AI and AI Agents? - The Big Picture
+DESCRIPTION:You will understand what AI and AI Agents means\, why people use it\, and what you can build later.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-2@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260523T080000
+DTEND:20260523T090000
+SUMMARY:AI and AI Agents - Day 2: Setting up your AI and AI Agents learning environment and tools
+DESCRIPTION:You will understand setting up your ai and ai agents learning environment and tools and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-3@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260524T080000
+DTEND:20260524T090000
+SUMMARY:AI and AI Agents - Day 3: AI and AI Agents: Key terms and mental models
+DESCRIPTION:You will understand ai and ai agents: key terms and mental models and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-4@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260525T080000
+DTEND:20260525T090000
+SUMMARY:AI and AI Agents - Day 4: AI and AI Agents: Real-world use cases
+DESCRIPTION:You will understand ai and ai agents: real-world use cases and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-5@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260526T080000
+DTEND:20260526T090000
+SUMMARY:AI and AI Agents - Day 5: AI and AI Agents: How the main workflow works
+DESCRIPTION:You will understand ai and ai agents: how the main workflow works and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-6@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260527T080000
+DTEND:20260527T090000
+SUMMARY:AI and AI Agents - Day 6: AI and AI Agents: Common myths and mistakes
+DESCRIPTION:You will understand ai and ai agents: common myths and mistakes and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-7@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260528T080000
+DTEND:20260528T090000
+SUMMARY:AI and AI Agents - Day 7: AI and AI Agents: Simple hands-on exploration
+DESCRIPTION:You will understand ai and ai agents: simple hands-on exploration and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-8@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260529T080000
+DTEND:20260529T090000
+SUMMARY:AI and AI Agents - Day 8: AI and AI Agents core building blocks
+DESCRIPTION:You will understand ai and ai agents core building blocks and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-9@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260530T080000
+DTEND:20260530T090000
+SUMMARY:AI and AI Agents - Day 9: AI and AI Agents basic workflow
+DESCRIPTION:You will understand ai and ai agents basic workflow and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-10@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260531T080000
+DTEND:20260531T090000
+SUMMARY:AI and AI Agents - Day 10: AI and AI Agents hands-on exercise
+DESCRIPTION:You will understand ai and ai agents hands-on exercise and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-11@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260601T080000
+DTEND:20260601T090000
+SUMMARY:AI and AI Agents - Day 11: AI and AI Agents guided mini project
+DESCRIPTION:You will understand ai and ai agents guided mini project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-12@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260602T080000
+DTEND:20260602T090000
+SUMMARY:AI and AI Agents - Day 12: AI and AI Agents debugging and review
+DESCRIPTION:You will understand ai and ai agents debugging and review and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-13@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260603T080000
+DTEND:20260603T090000
+SUMMARY:AI and AI Agents - Day 13: AI and AI Agents core building blocks
+DESCRIPTION:You will understand ai and ai agents core building blocks and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-14@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260604T080000
+DTEND:20260604T090000
+SUMMARY:AI and AI Agents - Day 14: AI and AI Agents basic workflow
+DESCRIPTION:You will understand ai and ai agents basic workflow and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-15@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260605T080000
+DTEND:20260605T090000
+SUMMARY:AI and AI Agents - Day 15: AI and AI Agents hands-on exercise
+DESCRIPTION:You will understand ai and ai agents hands-on exercise and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-16@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260606T080000
+DTEND:20260606T090000
+SUMMARY:AI and AI Agents - Day 16: AI and AI Agents guided mini project
+DESCRIPTION:You will understand ai and ai agents guided mini project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-17@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260607T080000
+DTEND:20260607T090000
+SUMMARY:AI and AI Agents - Day 17: AI and AI Agents debugging and review
+DESCRIPTION:You will understand ai and ai agents debugging and review and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-18@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260608T080000
+DTEND:20260608T090000
+SUMMARY:AI and AI Agents - Day 18: AI and AI Agents core building blocks
+DESCRIPTION:You will understand ai and ai agents core building blocks and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-19@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260609T080000
+DTEND:20260609T090000
+SUMMARY:AI and AI Agents - Day 19: AI and AI Agents basic workflow
+DESCRIPTION:You will understand ai and ai agents basic workflow and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-20@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260610T080000
+DTEND:20260610T090000
+SUMMARY:AI and AI Agents - Day 20: AI and AI Agents hands-on exercise
+DESCRIPTION:You will understand ai and ai agents hands-on exercise and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-21@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260611T080000
+DTEND:20260611T090000
+SUMMARY:AI and AI Agents - Day 21: AI and AI Agents guided mini project
+DESCRIPTION:You will understand ai and ai agents guided mini project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-22@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260612T080000
+DTEND:20260612T090000
+SUMMARY:AI and AI Agents - Day 22: AI and AI Agents debugging and review
+DESCRIPTION:You will understand ai and ai agents debugging and review and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-23@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260613T080000
+DTEND:20260613T090000
+SUMMARY:AI and AI Agents - Day 23: AI and AI Agents core building blocks
+DESCRIPTION:You will understand ai and ai agents core building blocks and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-24@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260614T080000
+DTEND:20260614T090000
+SUMMARY:AI and AI Agents - Day 24: AI and AI Agents basic workflow
+DESCRIPTION:You will understand ai and ai agents basic workflow and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-25@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260615T080000
+DTEND:20260615T090000
+SUMMARY:AI and AI Agents - Day 25: AI and AI Agents hands-on exercise
+DESCRIPTION:You will understand ai and ai agents hands-on exercise and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-26@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260616T080000
+DTEND:20260616T090000
+SUMMARY:AI and AI Agents - Day 26: AI and AI Agents guided mini project
+DESCRIPTION:You will understand ai and ai agents guided mini project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-27@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260617T080000
+DTEND:20260617T090000
+SUMMARY:AI and AI Agents - Day 27: AI and AI Agents debugging and review
+DESCRIPTION:You will understand ai and ai agents debugging and review and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-28@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260618T080000
+DTEND:20260618T090000
+SUMMARY:AI and AI Agents - Day 28: AI and AI Agents core building blocks
+DESCRIPTION:You will understand ai and ai agents core building blocks and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-29@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260619T080000
+DTEND:20260619T090000
+SUMMARY:AI and AI Agents - Day 29: AI and AI Agents basic workflow
+DESCRIPTION:You will understand ai and ai agents basic workflow and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-30@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260620T080000
+DTEND:20260620T090000
+SUMMARY:AI and AI Agents - Day 30: AI and AI Agents hands-on exercise
+DESCRIPTION:You will understand ai and ai agents hands-on exercise and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-31@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260621T080000
+DTEND:20260621T090000
+SUMMARY:AI and AI Agents - Day 31: AI and AI Agents intermediate project planning
+DESCRIPTION:You will understand ai and ai agents intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-32@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260622T080000
+DTEND:20260622T090000
+SUMMARY:AI and AI Agents - Day 32: AI and AI Agents building a practical project
+DESCRIPTION:You will understand ai and ai agents building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-33@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260623T080000
+DTEND:20260623T090000
+SUMMARY:AI and AI Agents - Day 33: AI and AI Agents evaluation and improvement
+DESCRIPTION:You will understand ai and ai agents evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-34@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260624T080000
+DTEND:20260624T090000
+SUMMARY:AI and AI Agents - Day 34: AI and AI Agents tool usage
+DESCRIPTION:You will understand ai and ai agents tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-35@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260625T080000
+DTEND:20260625T090000
+SUMMARY:AI and AI Agents - Day 35: AI and AI Agents case study
+DESCRIPTION:You will understand ai and ai agents case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-36@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260626T080000
+DTEND:20260626T090000
+SUMMARY:AI and AI Agents - Day 36: AI and AI Agents intermediate project planning
+DESCRIPTION:You will understand ai and ai agents intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-37@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260627T080000
+DTEND:20260627T090000
+SUMMARY:AI and AI Agents - Day 37: AI and AI Agents building a practical project
+DESCRIPTION:You will understand ai and ai agents building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-38@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260628T080000
+DTEND:20260628T090000
+SUMMARY:AI and AI Agents - Day 38: AI and AI Agents evaluation and improvement
+DESCRIPTION:You will understand ai and ai agents evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-39@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260629T080000
+DTEND:20260629T090000
+SUMMARY:AI and AI Agents - Day 39: AI and AI Agents tool usage
+DESCRIPTION:You will understand ai and ai agents tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-40@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260630T080000
+DTEND:20260630T090000
+SUMMARY:AI and AI Agents - Day 40: AI and AI Agents case study
+DESCRIPTION:You will understand ai and ai agents case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-41@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260701T080000
+DTEND:20260701T090000
+SUMMARY:AI and AI Agents - Day 41: AI and AI Agents intermediate project planning
+DESCRIPTION:You will understand ai and ai agents intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-42@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260702T080000
+DTEND:20260702T090000
+SUMMARY:AI and AI Agents - Day 42: AI and AI Agents building a practical project
+DESCRIPTION:You will understand ai and ai agents building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-43@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260703T080000
+DTEND:20260703T090000
+SUMMARY:AI and AI Agents - Day 43: AI and AI Agents evaluation and improvement
+DESCRIPTION:You will understand ai and ai agents evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-44@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260704T080000
+DTEND:20260704T090000
+SUMMARY:AI and AI Agents - Day 44: AI and AI Agents tool usage
+DESCRIPTION:You will understand ai and ai agents tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-45@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260705T080000
+DTEND:20260705T090000
+SUMMARY:AI and AI Agents - Day 45: AI and AI Agents case study
+DESCRIPTION:You will understand ai and ai agents case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-46@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260706T080000
+DTEND:20260706T090000
+SUMMARY:AI and AI Agents - Day 46: AI and AI Agents intermediate project planning
+DESCRIPTION:You will understand ai and ai agents intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-47@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260707T080000
+DTEND:20260707T090000
+SUMMARY:AI and AI Agents - Day 47: AI and AI Agents building a practical project
+DESCRIPTION:You will understand ai and ai agents building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-48@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260708T080000
+DTEND:20260708T090000
+SUMMARY:AI and AI Agents - Day 48: AI and AI Agents evaluation and improvement
+DESCRIPTION:You will understand ai and ai agents evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-49@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260709T080000
+DTEND:20260709T090000
+SUMMARY:AI and AI Agents - Day 49: AI and AI Agents tool usage
+DESCRIPTION:You will understand ai and ai agents tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-50@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260710T080000
+DTEND:20260710T090000
+SUMMARY:AI and AI Agents - Day 50: AI and AI Agents case study
+DESCRIPTION:You will understand ai and ai agents case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-51@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260711T080000
+DTEND:20260711T090000
+SUMMARY:AI and AI Agents - Day 51: AI and AI Agents intermediate project planning
+DESCRIPTION:You will understand ai and ai agents intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-52@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260712T080000
+DTEND:20260712T090000
+SUMMARY:AI and AI Agents - Day 52: AI and AI Agents building a practical project
+DESCRIPTION:You will understand ai and ai agents building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-53@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260713T080000
+DTEND:20260713T090000
+SUMMARY:AI and AI Agents - Day 53: AI and AI Agents evaluation and improvement
+DESCRIPTION:You will understand ai and ai agents evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-54@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260714T080000
+DTEND:20260714T090000
+SUMMARY:AI and AI Agents - Day 54: AI and AI Agents tool usage
+DESCRIPTION:You will understand ai and ai agents tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-55@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260715T080000
+DTEND:20260715T090000
+SUMMARY:AI and AI Agents - Day 55: AI and AI Agents case study
+DESCRIPTION:You will understand ai and ai agents case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-56@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260716T080000
+DTEND:20260716T090000
+SUMMARY:AI and AI Agents - Day 56: AI and AI Agents intermediate project planning
+DESCRIPTION:You will understand ai and ai agents intermediate project planning and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-57@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260717T080000
+DTEND:20260717T090000
+SUMMARY:AI and AI Agents - Day 57: AI and AI Agents building a practical project
+DESCRIPTION:You will understand ai and ai agents building a practical project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-58@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260718T080000
+DTEND:20260718T090000
+SUMMARY:AI and AI Agents - Day 58: AI and AI Agents evaluation and improvement
+DESCRIPTION:You will understand ai and ai agents evaluation and improvement and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-59@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260719T080000
+DTEND:20260719T090000
+SUMMARY:AI and AI Agents - Day 59: AI and AI Agents tool usage
+DESCRIPTION:You will understand ai and ai agents tool usage and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-60@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260720T080000
+DTEND:20260720T090000
+SUMMARY:AI and AI Agents - Day 60: AI and AI Agents case study
+DESCRIPTION:You will understand ai and ai agents case study and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-61@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260721T080000
+DTEND:20260721T090000
+SUMMARY:AI and AI Agents - Day 61: AI and AI Agents advanced architecture
+DESCRIPTION:You will understand ai and ai agents advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-62@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260722T080000
+DTEND:20260722T090000
+SUMMARY:AI and AI Agents - Day 62: AI and AI Agents real-world project
+DESCRIPTION:You will understand ai and ai agents real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-63@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260723T080000
+DTEND:20260723T090000
+SUMMARY:AI and AI Agents - Day 63: AI and AI Agents deployment thinking
+DESCRIPTION:You will understand ai and ai agents deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-64@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260724T080000
+DTEND:20260724T090000
+SUMMARY:AI and AI Agents - Day 64: AI and AI Agents best practices
+DESCRIPTION:You will understand ai and ai agents best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-65@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260725T080000
+DTEND:20260725T090000
+SUMMARY:AI and AI Agents - Day 65: AI and AI Agents portfolio polish
+DESCRIPTION:You will understand ai and ai agents portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-66@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260726T080000
+DTEND:20260726T090000
+SUMMARY:AI and AI Agents - Day 66: AI and AI Agents advanced architecture
+DESCRIPTION:You will understand ai and ai agents advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-67@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260727T080000
+DTEND:20260727T090000
+SUMMARY:AI and AI Agents - Day 67: AI and AI Agents real-world project
+DESCRIPTION:You will understand ai and ai agents real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-68@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260728T080000
+DTEND:20260728T090000
+SUMMARY:AI and AI Agents - Day 68: AI and AI Agents deployment thinking
+DESCRIPTION:You will understand ai and ai agents deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-69@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260729T080000
+DTEND:20260729T090000
+SUMMARY:AI and AI Agents - Day 69: AI and AI Agents best practices
+DESCRIPTION:You will understand ai and ai agents best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-70@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260730T080000
+DTEND:20260730T090000
+SUMMARY:AI and AI Agents - Day 70: AI and AI Agents portfolio polish
+DESCRIPTION:You will understand ai and ai agents portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-71@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260731T080000
+DTEND:20260731T090000
+SUMMARY:AI and AI Agents - Day 71: AI and AI Agents advanced architecture
+DESCRIPTION:You will understand ai and ai agents advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-72@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260801T080000
+DTEND:20260801T090000
+SUMMARY:AI and AI Agents - Day 72: AI and AI Agents real-world project
+DESCRIPTION:You will understand ai and ai agents real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-73@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260802T080000
+DTEND:20260802T090000
+SUMMARY:AI and AI Agents - Day 73: AI and AI Agents deployment thinking
+DESCRIPTION:You will understand ai and ai agents deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-74@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260803T080000
+DTEND:20260803T090000
+SUMMARY:AI and AI Agents - Day 74: AI and AI Agents best practices
+DESCRIPTION:You will understand ai and ai agents best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-75@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260804T080000
+DTEND:20260804T090000
+SUMMARY:AI and AI Agents - Day 75: AI and AI Agents portfolio polish
+DESCRIPTION:You will understand ai and ai agents portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-76@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260805T080000
+DTEND:20260805T090000
+SUMMARY:AI and AI Agents - Day 76: AI and AI Agents advanced architecture
+DESCRIPTION:You will understand ai and ai agents advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-77@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260806T080000
+DTEND:20260806T090000
+SUMMARY:AI and AI Agents - Day 77: AI and AI Agents real-world project
+DESCRIPTION:You will understand ai and ai agents real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-78@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260807T080000
+DTEND:20260807T090000
+SUMMARY:AI and AI Agents - Day 78: AI and AI Agents deployment thinking
+DESCRIPTION:You will understand ai and ai agents deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-79@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260808T080000
+DTEND:20260808T090000
+SUMMARY:AI and AI Agents - Day 79: AI and AI Agents best practices
+DESCRIPTION:You will understand ai and ai agents best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-80@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260809T080000
+DTEND:20260809T090000
+SUMMARY:AI and AI Agents - Day 80: AI and AI Agents portfolio polish
+DESCRIPTION:You will understand ai and ai agents portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-81@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260810T080000
+DTEND:20260810T090000
+SUMMARY:AI and AI Agents - Day 81: AI and AI Agents advanced architecture
+DESCRIPTION:You will understand ai and ai agents advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-82@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260811T080000
+DTEND:20260811T090000
+SUMMARY:AI and AI Agents - Day 82: AI and AI Agents real-world project
+DESCRIPTION:You will understand ai and ai agents real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-83@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260812T080000
+DTEND:20260812T090000
+SUMMARY:AI and AI Agents - Day 83: AI and AI Agents deployment thinking
+DESCRIPTION:You will understand ai and ai agents deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-84@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260813T080000
+DTEND:20260813T090000
+SUMMARY:AI and AI Agents - Day 84: AI and AI Agents best practices
+DESCRIPTION:You will understand ai and ai agents best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-85@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260814T080000
+DTEND:20260814T090000
+SUMMARY:AI and AI Agents - Day 85: AI and AI Agents portfolio polish
+DESCRIPTION:You will understand ai and ai agents portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-86@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260815T080000
+DTEND:20260815T090000
+SUMMARY:AI and AI Agents - Day 86: AI and AI Agents advanced architecture
+DESCRIPTION:You will understand ai and ai agents advanced architecture and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-87@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260816T080000
+DTEND:20260816T090000
+SUMMARY:AI and AI Agents - Day 87: AI and AI Agents real-world project
+DESCRIPTION:You will understand ai and ai agents real-world project and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-88@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260817T080000
+DTEND:20260817T090000
+SUMMARY:AI and AI Agents - Day 88: AI and AI Agents deployment thinking
+DESCRIPTION:You will understand ai and ai agents deployment thinking and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-89@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260818T080000
+DTEND:20260818T090000
+SUMMARY:AI and AI Agents - Day 89: AI and AI Agents best practices
+DESCRIPTION:You will understand ai and ai agents best practices and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:ai_and_ai_agents_2026_05_21-day-90@thozhi
+DTSTAMP:20260521T174023Z
+DTSTART:20260819T080000
+DTEND:20260819T090000
+SUMMARY:AI and AI Agents - Day 90: AI and AI Agents portfolio polish
+DESCRIPTION:You will understand ai and ai agents portfolio polish and do one small practical step.\\nResources: 4 items
+CATEGORIES:YearZero,Learning
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

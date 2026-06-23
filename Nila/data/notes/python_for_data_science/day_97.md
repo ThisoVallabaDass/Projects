@@ -1,0 +1,15 @@
+## Day 97: Python for data science applied exercises and problem solving
+
+### Key concepts
+- 
+
+### Examples
+```
+
+```
+
+### Practice notes
+- 
+
+### Questions I have
+- 
